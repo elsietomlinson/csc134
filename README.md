@@ -1,2 +1,2 @@
 # csc134
-C++ PrograMMING
+C++ Programming
