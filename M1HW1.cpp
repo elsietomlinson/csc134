@@ -2,7 +2,7 @@
 csc 134
 M1HW1
 elsie tomlinson
-8/27/2005
+8/27/2025
 purpose: write program giving name and release date of movie
 */
 //magic words
