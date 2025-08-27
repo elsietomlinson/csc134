@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
     //declare variables
-    string item_name = "'Shrek'.";
+    string item_name = "'Shrek.'";
     int year_released = 2001;
     double gross_income = 427;
 
