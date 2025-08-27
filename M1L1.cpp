@@ -23,7 +23,9 @@ int main() {
   cout << "We have " << num_items << " total." << endl;
   // do the proscessing
 double total_cost = num_items * cost_per;
-
+// print the output 
+cout << "Buying them all will cost: $" << total_cost << endl; 
+cout << "Thanks for shopping with us!" << endl;
 
   //end program 
   return 0;
