@@ -20,6 +20,7 @@ cout << "The motion picture " << item_name << endl;
 cout << "was released in the year " << year_released << "," << endl; 
 cout << " and it grossed " << gross_income << " million dollars."<< endl;
 cout << "some memorable quotes include,'What are you doing in my swamp?!'" << endl;
+cout << "and 'I like that boulder, that's a nice boulder!'" << endl;
 // end program
 return 0;
 }
