@@ -21,6 +21,7 @@ cout << "was released in the year " << year_released << "," << endl;
 cout << " and it grossed " << gross_income << " million dollars."<< endl;
 cout << "some memorable quotes include,'What are you doing in my swamp?!'" << endl;
 cout << "and 'I like that boulder, that's a nice boulder!'" << endl;
+cout << "the movie " << item_name << " is a heart felt, animated kids film about learning to let people into your life and creating a family."
 // end program
 return 0;
 }
