@@ -13,7 +13,8 @@ using namespace std;
 int main() {
   // start program
   string item = "kamkwat"; // replaced with your item
-  cout << "Welcome to the" << item << "store!" << endl;
+
+  cout << "Welcome to the " << item << " store!" << endl;
 
   //end program 
   return 0;
