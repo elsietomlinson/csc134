@@ -16,8 +16,12 @@ int main() {
   string item_name = "kamkwat"; // replaced with your item
   int    num_items = 10;
   double cost_per = 0.25;
+
+  //give our sales pitch
   cout << "Welcome to the " << item_name << " store!" << endl;
-// do the proscessing
+  cout << "Each " << item_name << " is $" << cost_per << endl;
+
+  // do the proscessing
 double total_cost = num_items * cost_per;
 
 
