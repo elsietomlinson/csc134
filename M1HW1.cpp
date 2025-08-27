@@ -14,7 +14,10 @@ int main() {
     string item_name = "Shrek.";
     int year_released = 2001;
     double gross_income = 427;
-
+// actual text
+cout << "The motion picture " << item_name << endl;
+cout << "was released in the year " << year_released << endl; 
+cout << " and it grossed " << gross_income << " million dollars." endl;
 
 // end program
 return 0;
