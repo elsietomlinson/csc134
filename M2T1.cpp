@@ -30,6 +30,6 @@ cout << "How many kamkwats would you like to buy?" << endl;
 
     
     //output the answer
-
+cout << "You are buying " << amount_purchased << " " << item << endl;
 return 0;
 }
