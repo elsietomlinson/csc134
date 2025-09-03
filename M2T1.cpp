@@ -16,7 +16,7 @@ int main()  {
     double cost_per = 0.99;
     int amount = 20;
     //variables for user input
-    int amount_purcahsed;
+    int amount_purchased;
     double total_cost;
     //Greet the user
 cout << "Hello! Welcome to our " << item << " store." << endl;
@@ -24,7 +24,10 @@ cout << "Hello! Welcome to our " << item << " store." << endl;
 cout << "Each of the " << item << " cost $" << cost_per << "." << endl;
 cout << endl; 
 cout << "How many kamkwats would you like to buy?" << endl;
-    //do some processing 
+   //cin put something in from the keyboard
+   cin >> amount_purchased;
+//do some processing 
+
     
     //output the answer
 
