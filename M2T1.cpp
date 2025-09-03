@@ -23,7 +23,7 @@ cout << "Hello! Welcome to our " << item << " store." << endl;
     // ask for information
 cout << "Each of the " << item << " cost $" << cost_per << "." << endl;
 cout << endl; 
-cout << "How mant kamkwats would you like to buy?" << endl;
+cout << "How many kamkwats would you like to buy?" << endl;
     //do some processing 
     
     //output the answer
