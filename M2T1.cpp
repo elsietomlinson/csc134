@@ -27,9 +27,10 @@ cout << "How many kamkwats would you like to buy?" << endl;
    //cin put something in from the keyboard
    cin >> amount_purchased;
 //do some processing 
-
-    
+total_cost = amount_purchased * cost_per;
     //output the answer
 cout << "You are buying " << amount_purchased << " " << item << endl;
+cout << "The total is $ " << total_cost << endl;
+cout << "Thank you for shopping with us!" << endl:
 return 0;
 }
