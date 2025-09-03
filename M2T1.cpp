@@ -22,6 +22,7 @@ int main()  {
 cout << "Hello! Welcome to our " << item << " store." << endl;
     // ask for information
 cout << "Each of the " << item << " cost $" << cost_per << "." << endl;
+cout << "We have 20 for sale." << endl;
 cout << endl; 
 cout << "How many " << item << " would you like to buy?" << endl;
    //cin put something in from the keyboard
