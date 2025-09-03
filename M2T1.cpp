@@ -19,9 +19,9 @@ int main()  {
     int amount_purcahsed;
     double total_cost;
     //Greet the user
-cout << "Hello! Welcome to our " << item << "store." << endl;
+cout << "Hello! Welcome to our " << item << " store." << endl;
     // ask for information
-cout << "Each of the " << item << "cost $" << cost_per << "." << endl;
+cout << "Each of the " << item << " cost $" << cost_per << "." << endl;
     //do some processing 
     
     //output the answer
