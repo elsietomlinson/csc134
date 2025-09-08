@@ -25,7 +25,7 @@ cout << "Crate Length: " << endl;
 cin >> length;
 cout << "Crate Width: " << endl;
 cin >> width; 
-cout << "Crate height: " endl;
+cout << "Crate height: " << endl;
 cin >> height;
     // calculate cost and prices
 volume = length * width * height;
