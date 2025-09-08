@@ -11,7 +11,9 @@ First Program.
 using namespace std;
 
 int main() {
+    string first_name = Elsie;
     cout << "Hello, World!" << endl;
+    cout << "My name is " << first_name << endl;
     cout << "My foo is math and I like practicing calculus." << endl;
     return 0;
 }
