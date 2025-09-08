@@ -31,6 +31,10 @@ cost_to_make = volume * COST_PER_CUBIC_FOOT;
 charge_to_customer = volume * CHARGE_PER_CUBIC_FOOT;
 profit = charge_to_customer - cost_to_make;
     //display the results
-
+cout << endl; 
+cout << "Your crate is " << volume << " cubic feet." << endl; 
+cout << "Customer Price:$" << charge_to_customer << endl;
+cout << "Cost to build: $" << cost_to_make << endl;
+cout << "Profit       : $" << profit << endl;
     return 0; //no errors
 }
