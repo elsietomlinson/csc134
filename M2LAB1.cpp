@@ -15,7 +15,7 @@ double cost_to_make, charge_to_customer; // pricing
 double profit;
 
 const double COST_PER_CUBIC_FOOT = 0.23; // relates to cost
-cost double CHARGE_PER_CUBIC_FOOT = 0.5; // relates to charge
+const double CHARGE_PER_CUBIC_FOOT = 0.5; // relates to charge
 
 
     // get crate information
