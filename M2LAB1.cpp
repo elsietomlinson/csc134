@@ -25,6 +25,8 @@ cout << "Crate Length: " << endl;
 cin >> length;
 cout << "Crate Width: " << endl;
 cin >> width; 
+cout << "Crate height: " endl;
+cin >> height;
     // calculate cost and prices
 volume = length * width * height;
 cost_to_make = volume * COST_PER_CUBIC_FOOT;
