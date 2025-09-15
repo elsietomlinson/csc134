@@ -33,7 +33,7 @@ cout << fixed << setprecision (2); // keeps it at two decimal places
 
 // now write the receipt, \t is the tab ??? i think?? 
 // now write out the receipt for your variables 
-
+cout << endl;
 cout << "\tRECEPIT" << endl;
 cout << endl; 
 cout << "\t ------" << endl; 
