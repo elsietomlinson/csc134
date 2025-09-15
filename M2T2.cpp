@@ -36,6 +36,13 @@ cout << fixed << setprecision (2); // keeps it at two decimal places
 cout << "\tRECEPIT" << endl;
 cout << endl; 
 cout << "\t ------" << endl; 
+cout << "You have one count of " << fooditem << endl;
+cout << endl; 
+cout << "-----------------" << endl; 
+cout << "Your subtotal is: $" << subtotal << endl;
+cout << "Total tax is: $" << tax_owed << endl; 
+cout << "\t Total Price: $" << endl;
+cout << total << endl; 
 
 
 
