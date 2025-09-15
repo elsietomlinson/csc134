@@ -31,10 +31,11 @@ total = subtotal + tax_owed;
 
 cout << fixed << setprecision (2); // keeps it at two decimal places 
 
-// now write the receipt
+// now write the receipt, \t is the tab ??? i think?? 
 
-cout << "      RECEPIT" << endl;
+cout << "\tRECEPIT" << endl;
 cout << endl; 
+cout << "\t ------" << endl; 
 
 
 
