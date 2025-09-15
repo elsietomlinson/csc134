@@ -15,15 +15,19 @@ int main () {
 cout << "Welcome to the bank!" << endl;
 cout << "QUESTION ONE" << endl;
 cout << endl; 
+
 //declare your variables
+
 string lname;
 string fname;
 double start_balance, deposit, withdrawal;
 int account_number = 123456789;
 // start your input
+cout << "First Name:" << endl;
 cin >> fname;
+cout << "Last Name: " << endl;
 cin >> lname;
-string = fname + " " + lname;
+string name = fname + " " + lname;
 
 
 return 0;
