@@ -12,13 +12,14 @@ using namespace std;
 int main () {
 // start the greeting
     cout << fixed << setprecision (2);
+cout << "Welcome to the bank!" << endl;
 cout << "QUESTION ONE" << endl;
 cout << endl; 
 //declare your variables
 string lname;
 string fname;
 double start_balance, deposit, withdrawal;
-int account_number = 123456789
+int account_number = 123456789;
 
 
 
