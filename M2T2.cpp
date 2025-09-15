@@ -20,10 +20,21 @@ string fooditem = "Racheros";
 
 // actual order
 cout << "welcome to the " << storename << endl;
-cout << "One order of " << fooditem << " is " << endl; 
-cout << food_price << endl;
+cout << "One order of " << fooditem << " is: " << food_price << endl;
+//define subtotal and total
+double subtotal, total;
+subtotal = food_price;
+//then do the math for taxes
+double tax = 0.08;
+double tax_owed = subtotal * tax;
+total = subtotal + tax_owed; 
+
+cout << fixed << setprecision (2); // keeps it at two decimal places 
 
 
 
 
+
+
+return 0;
 }
