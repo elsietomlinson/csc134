@@ -20,7 +20,7 @@ cout << endl;
 
 string lname;
 string fname;
-double start_balance, deposit, withdrawal;
+double start_balance, deposit, withdrawal, final_balance;
 int account_number = 123456789;
 // start your input
 cout << "First Name:" << endl;
@@ -32,12 +32,15 @@ cout << "Hello, " << name << "!" << endl;
 cout << "Your account number is: " << account_number << "." << endl;
 
 // q 2 asking for deposit
-cout << "Starting balance:" << endl;
+cout << "Starting balance: $" << endl;
 cin >> start_balance;
-cout << "How much would you like to deposit today? $:" << endl;
+cout << "How much would you like to deposit today? $" << endl;
 cin >> deposit;
-cout << "How much would you like to withdraw?" << endl;
+cout << "How much would you like to withdraw? $" << endl;
 cin >> withdrawal;
+// now do the "math" to calculate your final balance
+final_balance = (start_balance - withdrawal) + deposit;
+cout << "Your total is: $" << final_balance << "." << endl;
 
 return 0;
 }
