@@ -28,7 +28,9 @@ cin >> fname;
 cout << "Last Name: " << endl;
 cin >> lname;
 string name = fname + " " + lname;
+cout << "Hello, " << name << "!" << endl;
+cout << "Your account number is: " << account_number << "." << endl;
 
-
+ 
 return 0;
 }
