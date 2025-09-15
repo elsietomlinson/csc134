@@ -31,6 +31,10 @@ total = subtotal + tax_owed;
 
 cout << fixed << setprecision (2); // keeps it at two decimal places 
 
+// now write the receipt
+
+cout << "RECEPIT" << endl;
+cout << endl; 
 
 
 
