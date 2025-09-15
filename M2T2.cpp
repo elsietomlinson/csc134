@@ -13,7 +13,7 @@ using namespace std;
 // magic wordsssssss
 int main() {
 //variables 
-double food_price = 17.99; // double because it's decimal! not an integer
+double food_price = 5.99; // double because it's decimal! not an integer
 string storename = "Ranchoros!";
 string fooditem = "Racheros";
 
