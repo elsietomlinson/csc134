@@ -41,9 +41,7 @@ cout << endl;
 cout << "------------------------" << endl; 
 cout << "Your subtotal is: $" << subtotal << endl;
 cout << "Total tax is: $" << tax_owed << endl; 
-cout << " Total Price: $" << endl;
-cout << total << endl; 
-
+cout << " Total Price: $" << total << endl;
 
 
 
