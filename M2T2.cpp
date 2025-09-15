@@ -47,7 +47,7 @@ cout << endl;
 cout << "Thank you for dining with us!" << endl;
 cout << "\tHave a great day!" << endl;
 
-
+cout << ":)" << endl;
 
 return 0;
 }
