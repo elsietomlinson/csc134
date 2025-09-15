@@ -30,9 +30,14 @@ cin >> lname;
 string name = fname + " " + lname;
 cout << "Hello, " << name << "!" << endl;
 cout << "Your account number is: " << account_number << "." << endl;
+
 // q 2 asking for deposit
-cout << "How much money would you like to deposit today?" << endl;
-string deposit; 
+cout << "Starting balance:" << endl;
+cin >> start_balance;
+cout << "How much would you like to deposit today? $:" << endl;
 cin >> deposit;
+cout << "How much would you like to withdraw?" << endl;
+cin >> withdrawal;
+
 return 0;
 }
