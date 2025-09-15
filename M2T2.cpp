@@ -1,7 +1,7 @@
 /*
 elsie tomlinson 
 csc-134 
-M1T2 store with sales tax
+M2T2 - food store with taxes ( # bouta boston tea party this place)
 09/14/2025
 */
 // must include price before tax
