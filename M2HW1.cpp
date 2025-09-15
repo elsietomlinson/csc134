@@ -20,7 +20,10 @@ string lname;
 string fname;
 double start_balance, deposit, withdrawal;
 int account_number = 123456789;
-
+// start your input
+cin >> fname;
+cin >> lname;
+string = fname + " " + lname;
 
 
 return 0;
