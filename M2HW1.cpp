@@ -10,10 +10,17 @@ m2hw1
 using namespace std;
 
 int main () {
+// start the greeting
+    cout << fixed << setprecision (2);
+cout << "QUESTION ONE" << endl;
+cout << endl; 
+//declare your variables
+string lname;
+string fname;
+double start_balance, deposit, withdrawal;
+int account_number = 123456789
 
-    cout << fixed << setprecision (2)
-    
-    cout << "QUESTION ONE" << endl;
 
-string lname
+
+return 0;
 }
