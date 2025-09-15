@@ -1,7 +1,7 @@
 /* 
 csc-134
 elsie tomlinson 
-m2hw1
+m2hw1- question one
 09/15/2025
 */
 // magic words
@@ -41,6 +41,7 @@ cin >> withdrawal;
 // now do the "math" to calculate your final balance
 final_balance = (start_balance - withdrawal) + deposit;
 cout << "Your total is: $" << final_balance << "." << endl;
-
+// now say farewell
+cout << "Thank you so much for banking with us!" << endl;
 return 0;
 }
