@@ -13,7 +13,7 @@ int main () {
 // start the greeting
     cout << fixed << setprecision (2);
 cout << "Welcome to the bank!" << endl;
-cout << "QUESTION ONE" << endl;
+cout << "Please enter name:" << endl;
 cout << endl; 
 
 //declare your variables
