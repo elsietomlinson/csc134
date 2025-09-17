@@ -22,7 +22,14 @@ cout << "How many slices would you like?" << endl;
 cin >> slices_per_pizza;
 cout << endl;
 // how many guests are there going to be? 
-cout << "How big is your party?" 
+cout << "How big is your party?" << endl;
+cin >> party_goers
+// calculate how much pizza is left
+ int total_slices = pizzas * slices_per_pizza; 
+int total_eaten = slices * slices_per_guest; 
+int leftover = total_slices - total_eaten;
+//then display how much was eaten and how much is left. 
+cout << "You have a total of " << leftover << " pizza slices leftover." << endl;
 
 
 
