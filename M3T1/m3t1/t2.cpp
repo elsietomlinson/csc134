@@ -41,9 +41,12 @@ if (area1 > area2) {
 if (area2 > area2) 
 {
     cout << "The second rectangle is larger." << endl;
-    
-}
 
+}
+if (area1 == area2) { // "==" means equal to
+    cout << "The rectangles are the same size." << endl;
+
+}
 
 
 
