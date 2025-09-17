@@ -43,6 +43,6 @@ cout << endl;
 cout << "Your crate is " << volume << " cubic feet." << endl; 
 cout << "Customer Price:$" << charge_to_customer << endl;
 cout << "Cost to build: $" << cost_to_make << endl;
-cout << "Profit       : $" << profit << endl;
+cout << "Profit\t: $" << profit << endl;
     return 0; //no errors
 }
