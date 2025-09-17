@@ -35,17 +35,13 @@ cout << "Second rectangle area = " << area2 << endl;
 //compare both rectangles
 if (area1 > area2) {
     cout << "The first rectangle is larger." << endl;
-
 }
 
-if (area2 > area2) 
-{
-    cout << "The second rectangle is larger." << endl;
-
+else if (area2 > area2) {
+  cout << "The second rectangle is larger." << endl;
 }
-if (area1 == area2) { // "==" means equal to
+else (area1 == area2) { // "==" means equal to
     cout << "The rectangles are the same size." << endl;
-
 }
 
 
