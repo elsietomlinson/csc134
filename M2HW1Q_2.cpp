@@ -1,6 +1,7 @@
 /*
-csc-134
+csc-134-gold
 elsie tomlinon
+09/15/2025
 M2HW1 Question 2
 */
 // copy m2 lab 1 one into to start building off of it for this assigment

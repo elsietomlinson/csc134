@@ -1,7 +1,7 @@
 /* 
 csc-134
 elsie tomlinson 
-m2hw1- question one
+m2hw1- question one-gold
 09/15/2025
 */
 // magic words
