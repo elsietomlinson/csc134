@@ -17,7 +17,7 @@ int pizza, slices_per_pizza, party_goers;
 cout << "Welcome to Chuckee Cheez! How many pizza's would you like to order today?" << endl;
 cin >> pizza;
 cout << endl;
-// how many slices do they wnat
+// how many slices do they want
 cout << "How many slices would you like?" << endl;
 cin >> slices_per_pizza;
 cout << endl;
