@@ -27,12 +27,22 @@ cin >> width2;
 area1 = length1 * width1;
 area2 = length2 * width2; 
 //print the output
-cout << "The area of the first rectangle is: " << area1 << "inches." << endl;
-cout << "The are of the second rectangle is: " << area2 << "inches." << endl;
+cout << "The area of the first rectangle is: " << area1 << " inches." << endl;
+cout << "The are of the second rectangle is: " << area2 << " inches." << endl;
+// then use your if statements 
+cout << "First rectangle area = " << area1 << endl;
+cout << "Second rectangle area = " << area2 << endl;
+//compare both rectangles
+if (area1 > area2) {
+    cout << "The first rectangle is larger." << endl;
 
+}
 
-
-
+if (area2 > area2) 
+{
+    cout << "The second rectangle is larger." << endl;
+    
+}
 
 
 
