@@ -4,7 +4,7 @@ elsie tomlinon
 M2HW1 Question 2
 */
 // copy m2 lab 1 one into to start building off of it for this assigment
-
+// put in your magic words and use set precision
 #include <iostream> 
 #include <iomanip>
 using namespace std;
@@ -32,8 +32,11 @@ cout << "What is your crates height? : " << endl;
 cin >> height;
     // calculate cost and prices
 volume = length * width * height;
+// caclculating
 cost_to_make = volume * COST_PER_CUBIC_FOOT;
+// actual cost
 charge_to_customer = volume * CHARGE_PER_CUBIC_FOOT;
+// profit for the customer
 profit = charge_to_customer - cost_to_make;
     //display the results
 cout << endl; 
