@@ -17,8 +17,8 @@ string team = "Trojans";
 string cheerone = letsgo + " " + school;
 string cheertwo = letsgo + " " + team;
 //put it together in out put
-cout << letsgo << endl;
-cout << letsgo << endl; 
+cout << cheerone << endl;
+cout << cheerone << endl; 
 cout << cheerone << endl; 
 cout << cheertwo << endl;
 
