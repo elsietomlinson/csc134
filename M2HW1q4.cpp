@@ -6,7 +6,7 @@ string ftcc thingt
 
 */
 
-#include <iostream>>
+#include <iostream>
 using namespace std;
 int main() {
 // strings
