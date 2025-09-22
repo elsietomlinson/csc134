@@ -26,6 +26,8 @@ return 0;
 
 //define helper function
 int roll () {
+    //roll a six sided die
+    return 6;
 
 }
 
