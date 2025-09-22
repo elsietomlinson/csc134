@@ -10,7 +10,9 @@ csc-134
 using namespace std;
 
 //helper functions, always define these in the code
-int roll();
+int roll() {
+    return rand() % 6 + 1; // returns a random number between 1 and 6
+}
 int num = roll();
 // main
 int main () {
@@ -29,27 +31,21 @@ int sum = roll1 + roll2;
 cout << "The first roll was a " << roll1 << "." << endl;
 cout << "The second roll was a " << roll2 << "." << endl; 
 
-if (sum == 7) { 
+if  ( (sum == 7) || (sum == 11) ) { 
     cout << "Lucky Seven -- you win!" << endl;
+}
+
+// lose on 2, 3, 12 
+else if ( (sum == 2) || (sum == 3) || (sum == 12)  ) {
+cout << "2,3, 12 -- Womp womp you lost." << endl;
 }
 else { 
     point = sum;
-    cout << "Did not roll a seven." << endl;
+    cout << "Rolled a point." << endl;
 cout << "Your point is: " << point << endl;
 }
+ return 0;}
 
-
-
-
-return 0;    
-}
-//define helper function
-
-    //roll a six sided die
- int roll() {
- 
- return 0;
-}
 
 
 
