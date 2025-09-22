@@ -5,32 +5,30 @@ m3t2- craps part 1
 csc-134 
 */
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // for rand() and srand () 
+#include <ctime> // for time ()
 using namespace std;
-
-//helper functions, always define these in the code
-int roll() {
-    return rand() % 6 + 1; // returns a random number between 1 and 6
-}
-int num = roll();
+// declare helper function before main
+int roll();
 // main
 int main () {
 cout << "Let's play some craps!" << endl;
 cout << "Roll the die!"<< endl;
 
 // craps cycle
-cout << num << endl;
 int roll1 = 3;
 int roll2 = 4;
 int point; // roll if it doesn't win or lose
-cout << "Enter two dice (press ENTER between)" << endl;
-cin >> roll1;
-cin >> roll2;
+// Seed the RNG before roll
+srand(time(0));
+//roll the die
+roll1 = roll();
+roll2 = roll();
 int sum = roll1 + roll2;
 cout << "The first roll was a " << roll1 << "." << endl;
 cout << "The second roll was a " << roll2 << "." << endl; 
-
+cout << "ROLL:" << sum << endl;
+//win on 7 or 11
 if  ( (sum == 7) || (sum == 11) ) { 
     cout << "Lucky Seven -- you win!" << endl;
 }
@@ -45,7 +43,12 @@ else {
 cout << "Your point is: " << point << endl;
 }
  return 0;}
-
+// DEFINE HELPER FUNCTION
+int roll() {
+    int my_roll;
+    my_roll = (rand() % 6) +1; // 1-6
+    return my_roll;
+}
 
 
 
