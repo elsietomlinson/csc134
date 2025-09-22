@@ -16,8 +16,22 @@ int num = roll();
 int main () {
 cout << "Let's play some craps!" << endl;
 cout << "Roll the die!"<< endl;
-cout << num << endl;
 
+// craps cycle
+cout << num << endl;
+int roll1 = 2;
+int roll2 = 5;
+int sum = roll1 + roll2;
+
+
+if (sum == 7) { 
+    cout << "Lucky Seven -- you win!" << endl;
+}
+else { 
+    cout << "Did not roll a seven." << endl;
+    
+}
+}
 
 
 
