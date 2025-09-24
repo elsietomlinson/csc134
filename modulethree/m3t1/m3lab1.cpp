@@ -18,7 +18,7 @@ void victory(); // winning
 int main () {
     cout << "Welcome to this thrilling adventure!" << endl;
     cout << endl;
-    cout << "You're at home. Do you:" << endl;
+    cout << "You're in your childhood bedroom. Do you:" << endl;
     cout << "1. Go to the store" << endl;
     cout << "2. Stay home" << endl;
 
@@ -42,10 +42,6 @@ int main () {
 void myfunction() {}
 */
 
-void bedroom() {
-    cout << "Welcome to your childhood bedroom." << endl;
-    cout << "Do you choose to venture out? (Type 1 to leave)" << endl; 
-}
 
 void gameOver() {
     cout << "Go bed rot on Tik Tok till your parents call you!" << endl;
