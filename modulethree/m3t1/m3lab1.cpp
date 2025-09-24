@@ -16,9 +16,8 @@ void victory (); // winning
 int main () {
 cout << "Welcome to this thrilling adventure!" << endl;
 cout << endl;
-void bedroom () 
-{
-    out << "Welcome to your childhood bedroom." << endl;
+void bedroom (); {
+cout << "Welcome to your childhood bedroom." << endl;
 cout << "You need to go buy some groceries, head to the store!" << endl;
 }
 
