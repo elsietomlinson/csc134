@@ -30,7 +30,7 @@ cout << "The second roll was a " << roll2 << "." << endl;
 cout << "ROLL:" << sum << endl;
 //win on 7 or 11
 if  ( (sum == 7) || (sum == 11) ) { 
-    cout << "Lucky Seven -- you win!" << endl;
+    cout << "Lucky Seven or Eleven -- you win!" << endl;
 }
 
 // lose on 2, 3, 12 
@@ -39,7 +39,7 @@ cout << "2,3, 12 -- Womp womp you lost." << endl;
 }
 else { 
     point = sum;
-    cout << "Rolled a point." << endl;
+    cout << "You rolled a point." << endl;
 cout << "Your point is: " << point << endl;
 }
  return 0;}
