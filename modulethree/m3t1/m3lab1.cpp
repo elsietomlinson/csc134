@@ -29,6 +29,7 @@ int main () {
         cout << "Brave soul leaving your home! Don't run into anyone you know!" << endl; 
         store(); // go to store
         victory();// you win!
+        cout << endl;
         grocerylist(); // now you have to shop
     }
     else if (choice == 2) { 
