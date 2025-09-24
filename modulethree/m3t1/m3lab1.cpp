@@ -35,6 +35,10 @@ int main () {
     else if (choice == 2) { 
         gameOver();// game ends and you bed rot and don't go out 
     }
+    else {
+        cout << "Don't do that babe." << endl;
+        cout << "Use the functions I told you." << endl;
+    }
     return 0; // end of main
 } 
 
