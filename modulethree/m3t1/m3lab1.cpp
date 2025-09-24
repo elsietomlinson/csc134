@@ -12,7 +12,7 @@ void bedroom(); // starting room
 void store(); // another place to be 
 void gameOver(); // ending 
 void victory(); // winning 
-
+void grocerylist();// what do you need to buy at the grocery
 
 // main()
 int main () {
@@ -29,6 +29,7 @@ int main () {
         cout << "Brave soul leaving your home! Don't run into anyone you know!" << endl; 
         store(); // go to store
         victory();// you win!
+        grocerylist(); // now you have to shop
     }
     else if (choice == 2) { 
         gameOver();// game ends and you bed rot and don't go out 
@@ -45,6 +46,7 @@ void myfunction() {}
 
 void gameOver() {
     cout << "Go bed rot on Tik Tok till your parents call you!" << endl;
+    cout << "You lose cause you don't have groceries." << endl; 
 }
     //game over function
  void store() {
@@ -53,4 +55,8 @@ void gameOver() {
 }
 void victory() {
     cout << "You made it to the store, you win cause you went grocery store." << endl;
+}
+void grocerylist() {
+    cout << "Now you have to shop!" << endl;
+    cout << "Here's your list! Eggs, milk, coffee, and chocolate." << endl;
 }
