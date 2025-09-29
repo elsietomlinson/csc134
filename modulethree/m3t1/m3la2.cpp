@@ -20,6 +20,7 @@ void combat();
 int main () {
 letter_grader(); 
 void combat();
+int roll ();
 
 return 0;
 }
@@ -74,6 +75,7 @@ cin >> attacking_bonus;
 cout << "Enemy armor class: " << endl;
 cin >> enemy_armor;
 // roll to hit
+cout << "Roll: " << attack_roll << " + " << attacking_bonus << " = " << attack_roll+attacking_bonus << endl;
 if (attack_roll + attacking_bonus >= enemy_armor) {
     cout << "Hit!" << endl; 
 }
@@ -88,4 +90,12 @@ if (again == "y") {
     //call function again 
     combat();
 }
+}
+
+// new function 
+int roll() {
+    const int SIDES = 20;
+    int my_roll;
+    my_roll = (rand() % SIDES) + 1;
+    return my_roll;
 }
