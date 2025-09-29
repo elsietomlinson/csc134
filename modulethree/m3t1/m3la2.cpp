@@ -20,7 +20,7 @@ void combat();
 int main () {
 letter_grader(); 
 void combat();
-int roll ();
+int roll();
 
 return 0;
 }
@@ -68,13 +68,13 @@ attack roll _ bonu >= armor class then else miss*/
 // variables
 int attack_roll, attacking_bonus, enemy_armor;
 cout << "You are fighting a goblin." << endl;
-cout << "Enter your roll:" << endl;
-cin >> attack_roll;
 cout << "Enter your attack bonus: " << endl;
 cin >> attacking_bonus;
 cout << "Enemy armor class: " << endl;
 cin >> enemy_armor;
 // roll to hit
+
+attack_roll = roll();
 cout << "Roll: " << attack_roll << " + " << attacking_bonus << " = " << attack_roll+attacking_bonus << endl;
 if (attack_roll + attacking_bonus >= enemy_armor) {
     cout << "Hit!" << endl; 
