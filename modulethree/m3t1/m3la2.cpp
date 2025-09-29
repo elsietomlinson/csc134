@@ -12,7 +12,7 @@ putting in numerical grades and getting a letter grade back (changed to game mec
 using namespace std; 
 // delcaring functions
 // to make things easier, write in a function 
-void leter_grader();
+void letter_grader();
 void combat();
 
 
@@ -36,6 +36,6 @@ void letter_grader() {
     // create if statements 
     letter_grade = "A";
     //output answer
-    cout << "A number gade of" << num_grade << " is a(n) " << letter_grade;
+    cout << "A number gade of " << num_grade << " is a(n) " << letter_grade;
     cout << endl << endl;
 }
