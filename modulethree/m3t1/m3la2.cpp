@@ -41,16 +41,16 @@ void letter_grader() {
     cin >> num_grade;
 
     // create if statements 
-  if (num_grade <= 90) {
+  if (num_grade >= 90) {
     letter_grade = "A";
   }
-  else if (num_grade <= B_GRADE) {
+  else if (num_grade >= B_GRADE) {
     letter_grade + "B";
   }
-   else if (num_grade <= C_GRADE) {
+   else if (num_grade >= C_GRADE) {
     letter_grade = "D";
    }
-   else if (num_grade <= D_GRADE) {
+   else if (num_grade >= D_GRADE) {
     letter_grade = "D";
    }
    else {
