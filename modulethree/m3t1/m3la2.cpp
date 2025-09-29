@@ -57,6 +57,6 @@ void letter_grader() {
     letter_grade = "F";
    }
     //output answer
-    cout << "A number gade of " << num_grade << " is:  " << letter_grade;
+    cout << "A number grade of " << num_grade << " is:  " << letter_grade;
     cout << endl << endl;
 }
