@@ -45,10 +45,10 @@ void letter_grader() {
     letter_grade = "A";
   }
   else if (num_grade >= B_GRADE) {
-    letter_grade + "B";
+    letter_grade = "B";
   }
    else if (num_grade >= C_GRADE) {
-    letter_grade = "D";
+    letter_grade = "C";
    }
    else if (num_grade >= D_GRADE) {
     letter_grade = "D";
