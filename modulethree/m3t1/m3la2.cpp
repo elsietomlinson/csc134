@@ -20,8 +20,6 @@ int roll();
 int main () {
 letter_grader(); 
 void combat();
-
-
 return 0;
 }
 
