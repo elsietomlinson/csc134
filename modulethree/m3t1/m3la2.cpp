@@ -19,7 +19,7 @@ void combat();
 
 int main () {
 letter_grader(); 
-//combat();
+void combat();
 
 return 0;
 }
@@ -59,4 +59,33 @@ void letter_grader() {
     //output answer
     cout << "A number grade of " << num_grade << " is:  " << letter_grade;
     cout << endl << endl;
+}
+
+void combat () {
+/* a simple d and d style demo 
+attack roll _ bonu >= armor class then else miss*/
+// variables
+int attack_roll, attacking_bonus, enemy_armor;
+cout << "You are fighting a goblin." << endl;
+cout << "Enter your roll:" << endl;
+cin >> attack_roll;
+cout << "Enter your attack bonus: " << endl;
+cin >> attacking_bonus;
+cout << "Enemy armor class: " << endl;
+cin >> enemy_armor;
+// roll to hit
+if (attack_roll + attacking_bonus >= enemy_armor) {
+    cout << "Hit!" << endl; 
+}
+else {
+    cout << "Miss!" << endl; 
+}
+// try dagain? 
+cout << "You want to go again?" << endl;
+string again;
+cin >> again; 
+if (again == "y") {
+    //call function again 
+    combat();
+}
 }
