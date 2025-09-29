@@ -14,13 +14,13 @@ using namespace std;
 // to make things easier, write in a function 
 void letter_grader();
 void combat();
-
+int roll();
 
 
 int main () {
 letter_grader(); 
 void combat();
-int roll();
+
 
 return 0;
 }
