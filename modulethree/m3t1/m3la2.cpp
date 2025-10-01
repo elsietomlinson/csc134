@@ -1,7 +1,7 @@
 /*
 elsie tomlinson 
 csc-134
-module three lab 2
+module three lab 2 and my moudule 3 bonus. i didn't feel like copying and pasting this into a new string of code. or maybe i will idk. 
 putting in numerical grades and getting a letter grade back (changed to game mechanics test)
 */
 
@@ -19,22 +19,23 @@ int roll();
 
 
 int main () {
-int choice;
-cout << "Game or Letter grader? Choose 1 for grader and 2 for game." << endl; 
-cin >> choice; 
-if (choice == 1) {
-  letter_grader();
-}
-else if (choice == 2) {
-  combat();
-}
-else if (choice == 0) {
-  cout << "Bye, queen!" << endl; 
-}
-else {
-  cout << "That is not a choice dude. Use 1,2 or 0. Let's go!" << endl;
-}
-return 0;
+  cout << "Welcome to Elsie's Fantastic Game or Letter Grader." << endl;
+  int choice;
+  cout << "Game or Letter grader? Choose 1 for grader and 2 for game." << endl; 
+  cin >> choice; 
+  if (choice == 1) {
+    letter_grader();
+  }
+  else if (choice == 2) {
+    combat();
+  }
+  else if (choice == 0) {
+    cout << "Bye, queen!" << endl; 
+  }
+  else {
+    cout << "That is not a choice dude. Use 1,2 or 0. Let's go!" << endl;
+  }
+  return 0;
 }
 
 // define other fucntions under main
@@ -54,65 +55,65 @@ void letter_grader() {
     cin >> num_grade;
 
     // create if statements 
-  if (num_grade >= 90) {
-    letter_grade = "A";
-  }
-  else if (num_grade >= B_GRADE) {
-    letter_grade = "B";
-  }
-   else if (num_grade >= C_GRADE) {
-    letter_grade = "C";
-   }
-   else if (num_grade >= D_GRADE) {
-    letter_grade = "D";
-   }
-   else {
-    letter_grade = "F";
-   }
-    //output answer
-    cout << "A number grade of " << num_grade << " is:  " << letter_grade;
-    cout << endl << endl;
+    if (num_grade >= 90) {
+      letter_grade = "A";
+    }
+    else if (num_grade >= B_GRADE) {
+      letter_grade = "B";
+    }
+    else if (num_grade >= C_GRADE) {
+      letter_grade = "C";
+    }
+    else if (num_grade >= D_GRADE) {
+      letter_grade = "D";
+    }
+    else {
+      letter_grade = "F";
+    }
+      //output answer
+      cout << "A number grade of " << num_grade << " is:  " << letter_grade;
+      cout << endl << endl;
 }
 
 void combat () {
-/* a simple d and d style demo 
-attack roll _ bonu >= armor class then else miss*/
-// variables
-int attack_roll, attacking_bonus, enemy_armor;
-cout << "You are fighting a goblin." << endl;
-cout << "Enter your attack bonus: " << endl;
-cin >> attacking_bonus;
-cout << "Enemy armor class: " << endl;
-cin >> enemy_armor;
-// roll to hit
+  /* a simple d and d style demo 
+  attack roll _ bonu >= armor class then else miss*/
+  // variables
+  int attack_roll, attacking_bonus, enemy_armor;
+  cout << "You are fighting a goblin." << endl;
+  cout << "Enter your attack bonus: " << endl;
+  cin >> attacking_bonus;
+  cout << "Enemy armor class: " << endl;
+  cin >> enemy_armor;
+  // roll to hit
 
-attack_roll = roll();
-cout << "Roll: " << attack_roll << " + " << attacking_bonus << " = " << attack_roll+attacking_bonus << endl;
-if (attack_roll + attacking_bonus >= enemy_armor) {
-    cout << "Hit!" << endl; 
-}
-else {
-    cout << "Miss!" << endl; 
-}
-// try dagain? 
-cout << "You want to go again?" << endl;
-string again, not_again; 
-cin >> again; 
-// if statements to restart the game or not
-if (again == "y") {
-    //call function again 
-    combat();
-}
-if (again == "n") {
-  cout << "Goodye! Have a nice life!" << endl;
+  attack_roll = roll();
+  cout << "Roll: " << attack_roll << " + " << attacking_bonus << " = " << attack_roll+attacking_bonus << endl;
+  if (attack_roll + attacking_bonus >= enemy_armor) {
+      cout << "Hit!" << endl; 
+  }
+  else {
+      cout << "Miss!" << endl; 
+  }
+  // try dagain? 
+  cout << "You want to go again?" << endl;
+  string again, not_again; 
+  cin >> again; 
+  // if statements to restart the game or not
+  if (again == "y") {
+      //call function again 
+      combat();
+  }
+  if (again == "n") {
+    cout << "Goodye! Have a nice life!" << endl;
 }
 }
 
 // new function 
 int roll() {
-    const int SIDES = 20;
-    int my_roll;
-    my_roll = (rand() % SIDES) + 1;
-    return my_roll;
+      const int SIDES = 20;
+      int my_roll;
+      my_roll = (rand() % SIDES) + 1;
+      return my_roll;
 }
 
