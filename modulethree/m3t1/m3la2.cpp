@@ -15,11 +15,22 @@ using namespace std;
 void letter_grader();
 void combat();
 int roll();
+ 
 
 
 int main () {
-letter_grader(); 
-void combat();
+int choice;
+cout << "Game or Letter grader? Choose 1 for grader and 2 for game." << endl; 
+cin >> choice; 
+if (choice == 1) {
+  letter_grader();
+}
+else if (choice == 2) {
+  combat();
+}
+else if (choice == 0) {
+  cout << "Not a choice. BYEEEEEE." << endl; 
+}
 return 0;
 }
 
@@ -82,11 +93,15 @@ else {
 }
 // try dagain? 
 cout << "You want to go again?" << endl;
-string again;
+string again, not_again; 
 cin >> again; 
+
 if (again == "y") {
     //call function again 
     combat();
+}
+if (again == "n") {
+  cout << "Goodye! Have a nice life!" << endl;
 }
 }
 
