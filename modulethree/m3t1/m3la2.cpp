@@ -96,7 +96,7 @@ void combat () {
       cout << "Miss!" << endl; 
   }
   // try dagain? 
-  cout << "You want to go again?" << endl;
+  cout << "You want to go again? Type y fore yes, type n for no." << endl;
   string again, not_again; 
   cin >> again; 
   // if statements to restart the game or not
