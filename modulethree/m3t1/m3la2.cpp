@@ -29,7 +29,10 @@ else if (choice == 2) {
   combat();
 }
 else if (choice == 0) {
-  cout << "Not a choice. BYEEEEEE." << endl; 
+  cout << "Bye, queen!" << endl; 
+}
+else {
+  cout << "That is not a choice dude. Use 1,2 or 0. Let's go!" << endl;
 }
 return 0;
 }
@@ -95,7 +98,7 @@ else {
 cout << "You want to go again?" << endl;
 string again, not_again; 
 cin >> again; 
-
+// if statements to restart the game or not
 if (again == "y") {
     //call function again 
     combat();
@@ -113,4 +116,3 @@ int roll() {
     return my_roll;
 }
 
-//how do i stop the grade code and start the game code???????? BRUH SDLFJKS:LDKJF
