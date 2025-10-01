@@ -73,6 +73,15 @@ void letter_grader() {
       //output answer
       cout << "A number grade of " << num_grade << " is:  " << letter_grade;
       cout << endl << endl;
+      cout << "Do you have more grades to input?" << endl;
+      string more_grades;
+      cin >> more_grades; 
+      if (more_grades == "y") {
+        letter_grader();
+      }
+      if (more_grades == "n") {
+        cout << "Good luck on your finals! Byeee." << endl;
+      }
 }
 
 void combat () {
@@ -97,7 +106,7 @@ void combat () {
   }
   // try dagain? 
   cout << "You want to go again? Type y fore yes, type n for no." << endl;
-  string again, not_again; 
+  string again; 
   cin >> again; 
   // if statements to restart the game or not
   if (again == "y") {
