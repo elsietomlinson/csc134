@@ -97,3 +97,5 @@ int roll() {
     my_roll = (rand() % SIDES) + 1;
     return my_roll;
 }
+
+//how do i stop the grade code and start the game code???????? BRUH SDLFJKS:LDKJF
