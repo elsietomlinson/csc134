@@ -8,14 +8,14 @@ ai has got free pass for this i guess
 using namespace std;
     int main () {
 int health = 50; 
-int Maxhealth = 100: 
+int Maxhealth = 100;
 while (health < Maxhealth)
 {
-    health = health + 10
+    health = health + 10;
     cout << "Health: " << health << "/" << Maxhealth << endl;
 }
 
-cout << "Fully recovered: " << endl;
+cout << "Fully recovered! " << endl;
 
 
 
