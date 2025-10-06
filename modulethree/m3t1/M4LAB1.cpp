@@ -17,8 +17,11 @@ while (health < Maxhealth)
 
 cout << "Fully recovered! " << endl;
 
+cout << "FOR LOOP:" << endl;
+for (int foo = 1; foo <= 10; foo = foo + 1) {
 
-
+}
+cout << "Character Stats: " << endl;
 
 
 
