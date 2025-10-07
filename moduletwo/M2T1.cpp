@@ -5,8 +5,6 @@ elsie tomlinson
 m2t1 apple store w/ input
 */
 
-
-
 #include <iostream>
 using namespace std;
 int main()  {
