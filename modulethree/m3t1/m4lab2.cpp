@@ -30,5 +30,7 @@ cout << endl;
 for (int i = 0; i < height; i++) {
     cout << tile << endl;
 }
+cout << endl << endl; // white space
+cout << "Rectangle " <<  length << " X " << height << endl;
 return 0; // no errors 
 }
