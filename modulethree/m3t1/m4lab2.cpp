@@ -2,7 +2,8 @@
 elsie tomlinson
 m4lab2 =nested loops and rectangles
 10/8/2025
-Task: draw a rectangle*/
+Task: draw a rectangle
+*/
 
 #include <iostream>
 using namespace std;
@@ -31,6 +32,11 @@ for (int i = 0; i < height; i++) {
     cout << tile << endl;
 }
 cout << endl << endl; // white space
+cout << "Draw a rectangle." << endl;
+cout << "length?" << endl;
+cin >> length; 
+cout << "Height?" << endl;
+cin >> height;
 cout << "Rectangle " <<  length << " X " << height << endl;
 // outer loophandles printing number of lines and inner loop handles printing each lne as a number of tiles
 
