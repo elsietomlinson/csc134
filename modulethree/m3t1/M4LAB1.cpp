@@ -55,10 +55,11 @@ while (health < Maxhealth)
     health = health + 10;
     cout << "Health: " << health << "/" << Maxhealth << endl;
 }
+cout << "Fully Recovered!" << endl;
 }
 
     else if (choice == 3) {
-    cout << "=== Character Stats up to Level 10 ===" << endl;
+    cout << "=== Character Stats up to Level 10 ===" << endl; // character stat function
     for (int level = 1; level <= 10; level ++) {
         int health = 100 + level * 20;
         int attack = 10 + level * 5;
