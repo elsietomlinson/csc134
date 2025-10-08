@@ -23,7 +23,14 @@ cout << "Welcome to " << storename << endl;
 cout << "What would you like to eat today?" << endl;
 cin >> fooditem;
 cout << endl; 
-cout 
+cout << "Enter price of you sustenance of choice today: " << endl;
+cin >> price; 
+cout << "Would you like to eat in or out today? 1 for here, 2 for to go." << endl; 
+cin >> hereortogo; 
+cout << "You are eating " << fooditem << " and it is: " << price << "dollars." << endl;
+cout << endl; 
+
+// figure out the actual amath
 
 
     return 0;
