@@ -31,7 +31,52 @@ cout << "You are eating " << fooditem << " and it is: " << price << "dollars." <
 cout << endl; 
 
 // figure out the actual amath
+// calculate subtotal and total
+double subtotal, total, heretotal, gototal;
+subtotal = price; // changes if they buy more 
+
+// calculate tax
+double tax = 0.08; // 8% tax
+double taxowed = subtotal * tax; 
+gototal = subtotal + taxowed; 
+
+// calculate your tip
+double tip = 0.15; // 15% tip 
+double tipowed = subtotal * tip; // tip amount for item
+heretotal = subtotal + tipowed + taxowed; 
+
+// if statements for actual code
+if (hereortogo == 1) {
+    total = heretotal; 
+}
+if (hereortogo == 2) {
+    total = gototal; 
+    tipowed = 0;
+}
+else {
+    fooditem = "Not real food babe.";
+subtotal = 0; 
+taxowed = 0;
+tipowed = 0; 
+total = 0;
+}
+   
+// actual print out of receipt
+cout << "    RECEIPT" << endl; 
+cout << "----------------" << endl; 
+cout << endl; 
+cout << "1 " << fooditem << endl; 
+cout << endl; 
+cout << "--------------------" << endl; 
+cout << "Subtotal:     $" << subtotal << endl; 
+cout << " Tax:          $" << taxowed << endl; 
+cout << " Tip:           $" << tipowed << endl; 
+cout << "-------------------" << endl; 
+cout << "Total           $" << endl; 
+cout << "------------------" << endl; 
+cout << endl; 
 
 
-    return 0;
+
+return 0;
 }
