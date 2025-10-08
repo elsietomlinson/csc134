@@ -33,11 +33,11 @@ for (int i = 0; i < height; i++) {
 }
 cout << endl << endl; // white space
 cout << "Draw a rectangle." << endl;
-cout << "length?" << endl;
+cout << "Length?" << endl;
 cin >> length; 
 cout << "Height?" << endl;
 cin >> height;
-cout << "Rectangle " <<  length << " X " << height << endl;
+cout << "Rectangle = " <<  length << " X " << height << endl;
 // outer loophandles printing number of lines and inner loop handles printing each lne as a number of tiles
 
 for (int i=0; i < height; i++) {
