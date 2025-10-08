@@ -32,5 +32,14 @@ for (int i = 0; i < height; i++) {
 }
 cout << endl << endl; // white space
 cout << "Rectangle " <<  length << " X " << height << endl;
+// outer loophandles printing number of lines and inner loop handles printing each lne as a number of tiles
+
+for (int i=0; i < height; i++) {
+    //pritn line
+    for (int j=0; j < length; j++) {
+        cout << tile;
+    }
+    cout << endl;
+}
 return 0; // no errors 
 }
