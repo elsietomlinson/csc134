@@ -10,8 +10,8 @@ using namespace std;
 // path options for game
     void begin(); // staying in matrix
     void path(); // live in the lie
-    void option1(); // choice to stay where you are
-    void option2(); // choice to defy the laws of fate. 
+    void optional1(); // choice to stay where you are
+    void optional2(); // choice to defy the laws of fate. 
 int main () {
 
 cout << "QUESTION 3" << endl;
@@ -30,10 +30,10 @@ cin >> option1;
 cout << endl; 
 
 // now you have to type if statements 
-if (option1 == 1) {
+if (option1 == 2) {
 begin(); 
 }
- if (option1 == 2) {
+ if (option1 == 1) {
     path();
  }
 // second user prompt 
@@ -55,7 +55,7 @@ if (option2 == 2) {
 }
 // end of main 
 // output for begin // choosing to stay in the matrix. 
-void begin(); {
+ void begin() {
 
     cout << "You choose to live in a lie." << endl; 
     cout << "You die trying to climb a infinitie corporate ladder." << endl; 
@@ -63,7 +63,7 @@ void begin(); {
 }
 
 // for the path function 
-void path(); {
+ void path() {
     cout << "You have broken the laws of fate and have decided to live with your free will." << endl; 
     cout << "You must fight for the rest of your life." << endl; 
     cout << "HOORAAAAA" << endl;
