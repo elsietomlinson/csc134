@@ -31,22 +31,40 @@ cout << endl;
 
 // now you have to type if statements 
 if (option1 == 1) {
-
+begin(); 
 }
-
-
-
-
+ if (option1 == 2) {
+    path();
+ }
+// second user prompt 
+cout << "Do you wish to fight for others in the matrix or continue to live your life?" << endl; 
+cout << "Choose 1 for yes, 2 for no." << endl; 
+cin >> option2;
+if (option2 == 1) {
+    path();
+}
+if (option2 == 2) {
+    cout << "You have decided to not do anything. You will not make a difference." << endl; 
+    cout << "R.I.P." << endl;
+}
 
 
 
 
     return 0; 
 }
+// end of main 
 // output for begin // choosing to stay in the matrix. 
 void begin(); {
 
     cout << "You choose to live in a lie." << endl; 
     cout << "You die trying to climb a infinitie corporate ladder." << endl; 
     cout << "Pray there's an after life." << endl; 
+}
+
+// for the path function 
+void path(); {
+    cout << "You have broken the laws of fate and have decided to live with your free will." << endl; 
+    cout << "You must fight for the rest of your life." << endl; 
+    cout << "HOORAAAAA" << endl;
 }
