@@ -14,12 +14,12 @@ int get_the_answer(); // provides the anser
 double double_a_number(); // num times two 
 
 
-int main(); {
+int main() {
     double my_num;
     int another_num;
     cout << "welcome to a program" << endl; 
     cout << " Please enter a number (with or without decimal place)" << endl; 
-    cin >> my_num
+    cin >> my_num;
     my_num = my_num * 2;
     cout << "Double the number is: " << my_num << endl; 
     
