@@ -22,7 +22,8 @@ int main() {
     cin >> my_num;
     my_num = double_a_number(my_num);
     cout << "Double the number is: " << my_num << endl; 
-    
+    cout << "But the only answer your need is : " << endl;
+    cout << get_the_answer() << endl;
     return 0;
 }
 
@@ -31,7 +32,7 @@ void say_hello() { //says hi
 cout << "Welcome to a function." << endl;
 }
 int get_the_answer(){
-
+return 42;
 } // provides the anser
 
 double double_a_number(double the_num) {
