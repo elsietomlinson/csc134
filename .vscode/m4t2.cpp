@@ -11,7 +11,9 @@ I have some C++ code can you rewrite it so I can put it into twee and make it in
 I was confused where to paste the code. “Do I paste this into the untitled passage?” 
 Chat told me to either split up the code and then paste into other passages. 
 I asked chat to break up the twee so I could seamlessly paste the code into the passages with not guff. It wrote me clean passages so I could just copy and paste the code into each passage and then test the code. 
-I then tried to figure out how to upload it and then asked if copying and pasting was the only way to get it into the browser and it is.   
+I then tried to figure out how to upload it and then asked if copying and pasting was the only way to get it into the browser and it is.  
+There were no errors after I specified that i wanted the ai to break everything up into specific passages that were easy to copy and paste straight into twinery. It told me exactly which one to paste and when to .
+I also asked why the tree goes back to start after the lose fucntion and it is because the game has to restart even when you lose.  
 */
 
 
