@@ -4,6 +4,17 @@ elsie tomlinson
 using ai to modify our choose your own adventure game 
 meowmoew moew meow meow
 */
+
+/* 
+GPT appendix
+I have some C++ code can you rewrite it so I can put it into twee and make it into twine? 
+I was confused where to paste the code. “Do I paste this into the untitled passage?” 
+Chat told me to either split up the code and then paste into other passages. 
+I asked chat to break up the twee so I could seamlessly paste the code into the passages with not guff. It wrote me clean passages so I could just copy and paste the code into each passage and then test the code. 
+I then tried to figure out how to upload it and then asked if copying and pasting was the only way to get it into the browser and it is.   
+*/
+
+
 #include <iostream>
 #include <string>
 using namespace std;
