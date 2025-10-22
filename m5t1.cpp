@@ -11,16 +11,16 @@ void say_hello(); //says hi
 
 int get_the_answer(); // provides the anser
 
-double double_a_number(); // num times two 
+double double_a_number(double the_num); // num times two 
 
 
 int main() {
     double my_num;
     int another_num;
-    cout << "welcome to a program" << endl; 
+    say_hello(); 
     cout << " Please enter a number (with or without decimal place)" << endl; 
     cin >> my_num;
-    my_num = my_num * 2;
+    my_num = double_a_number(my_num);
     cout << "Double the number is: " << my_num << endl; 
     
     return 0;
@@ -28,10 +28,10 @@ int main() {
 
 // function defintions the whole function goes here
 void say_hello() { //says hi
-
+cout << "Welcome to a function." << endl;
 }
 int get_the_answer(){
-    
+
 } // provides the anser
 
 double double_a_number(double the_num) {
