@@ -26,3 +26,15 @@ int main() {
     return 0;
 }
 
+// function defintions the whole function goes here
+void say_hello() { //says hi
+
+}
+int get_the_answer(){
+    
+} // provides the anser
+
+double double_a_number(double the_num) {
+    double answer = the_num * 2; 
+    return answer;
+}// num times two 
