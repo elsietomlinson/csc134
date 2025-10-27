@@ -47,3 +47,7 @@ using namespace std;
     
     return 0;
 }
+// question one
+part1()  {
+
+}
