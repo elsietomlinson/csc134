@@ -3,6 +3,7 @@ elsie tomlinson
 csc-134
 m4hw1
 gold tier meow
+10/27/2025
 */
 // each function to each part of the hw
 void part1();
