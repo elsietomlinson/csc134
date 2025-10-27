@@ -8,7 +8,6 @@ gold tier meow
 void part1();
 void part2();
 void part3();
-void part4();
 // magic words
 #include <iostream> 
 using namespace std;
@@ -32,9 +31,6 @@ using namespace std;
         part3();
         cout << endl; 
     }
-    else if (selection == 4) {
-        part4();
-    }
     else if (selection == 0) {
         cout << "Bye! See ya later!" << endl; 
         cout << endl; 
@@ -48,6 +44,6 @@ using namespace std;
     return 0;
 }
 // question one
-part1()  {
+ void part1()  {
 
 }
