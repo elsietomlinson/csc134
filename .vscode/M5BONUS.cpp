@@ -1,7 +1,7 @@
 /* 
 elsie tomlinson
 m5bonus assignment
-orange pass for ai
+orange pass for ai trying to make a puzzle game
 10/27/2025
 */
 // paste game
