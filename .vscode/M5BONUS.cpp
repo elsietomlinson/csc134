@@ -7,6 +7,60 @@ orange pass for ai
 // paste game
 /*
 ai transcript
+hi claude ive got an mvp plan for a game here : 
+Minimum Viable Product Plan
+Core Features (Must Have):
+1. Three Rooms with Linear Progression
+   * Room 1: Entrance Hall
+   * Room 2: Gallery Wing
+   * Room 3: Jewels Chamber
+   * Player moves: North, South, East, West
+2. Basic Command Parser
+   * Movement: go north, move east, etc.
+   * Interaction: examine [item], take [item], use [item]
+   * System: inventory, look, help
+3. Suspicion Meter
+   * 0-3 strikes system
+   * Display current suspicion level
+   * Game over at 3 strikes
+4. One Puzzle Per Room (simple but functional)
+   * Room 1: Find keycard or distract guard
+   * Room 2: Examine art to find clue/code
+   * Room 3: Enter code to open jewel case
+5. Inventory System
+   * Pick up 3-5 key items
+   * Use items to solve puzzles
+6. Win/Lose Conditions
+   * Win: Get jewels and reach exit
+   * Lose: Suspicion hits 3
+French + "Eat the Rich" Flavor:
+* 5-6 funny art descriptions with French phrases
+* French words in key moments (success/failure messages)
+* Brief "Robin Hood" justification in intro/outro
+Code Structure:
+
+main.cpp - game loop
+Room class - location data
+Player class - inventory + suspicion
+GameState class - manages rooms, current location
+Parser - handle commands
+What's NOT in MVP (save for later):
+* Multiple solutions per puzzle
+* NPC conversations
+* Save/load system
+* Complex branching paths
+* Sound/graphics
+Deliverable: A playable 10-15 minute heist game that demonstrates:
+* Core gameplay loop
+* Puzzle mechanics
+* Tone/theme
+* Technical competence
+Does this feel like the right scope to show your supervisor?
+can you implement all of those changes that recommended?
+
+can you add a hint feature in case the player gets stuck>
+
+
 */
 #include <iostream>
 #include <string>
