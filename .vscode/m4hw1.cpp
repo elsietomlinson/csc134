@@ -18,7 +18,7 @@ using namespace std;
 
         while (true == keep_going) {
             cout << "Select Question part you would like to see." << endl; 
-            cout << "Type 1, 2, 3, 4, or 0 to end." << endl;
+            cout << "Type 1, 2, 3 or 0 to end." << endl;
             cin >> selection; 
     if (selection == 1) {
         part1(); 
