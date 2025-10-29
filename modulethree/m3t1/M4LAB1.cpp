@@ -3,6 +3,7 @@ elsie tomlinson
 csc-134
 bonus but not bonus assignment 
 ai has got free pass for this i guess
+norris i have no clue what's going on adn assignments keep chaing :,(
 */
 #include <iostream> 
 using namespace std;

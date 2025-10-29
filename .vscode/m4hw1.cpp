@@ -46,5 +46,12 @@ using namespace std;
 }
 // question one
  void part1()  {
-
+int const TABLE = 5;
+int n = 0;
+int product; 
+ while (n < 12) {
+    n++;
+    product = TABLE * n;
+    cout << TABLE << " times " << n << " equals " << product << endl; 
+ }
 }
