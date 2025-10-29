@@ -52,6 +52,26 @@ int product;
  while (n < 12) {
     n++;
     product = TABLE * n;
-    cout << TABLE << " times " << n << " equals " << product << endl; 
+    cout << TABLE << " times " << n << " is " << product << endl; 
  }
+}
+
+void part2() {
+int table; 
+int n = 0; 
+int product;
+cout << "Enter a number from 1 to 12." << endl;
+cin >> table; 
+cout << endl;
+cout << endl;
+while (n < 12 && table >= 1 && table <= 12) {
+n++;
+product = table * n;
+cout << table << " times " << n << " is " << product << endl;
+}
+
+}
+
+void part3() {
+    cout << "Part 3 not ready yet" << endl; 
 }
