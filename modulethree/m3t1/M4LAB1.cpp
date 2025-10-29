@@ -49,7 +49,7 @@ cin >> choice; // choosing where the code takes you
 else if (choice == 2) {
     // health function
     cout << "Don't let your health get to zero!" << endl; 
-int health = 50; 
+int health = 20; 
 int Maxhealth = 100;
 while (health < Maxhealth)
 {

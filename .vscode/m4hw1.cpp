@@ -12,7 +12,7 @@ void part3();
 // magic words
 #include <iostream> 
 using namespace std;
-    int main(){
+    int main() {
         int selection; //  input
         bool keep_going = true;
 
@@ -40,7 +40,7 @@ using namespace std;
     else {
         cout << "Type the options I gave you." << endl;
     }
-        }
+}  
     
     return 0;
 }
