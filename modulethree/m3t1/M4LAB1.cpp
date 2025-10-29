@@ -9,6 +9,8 @@ norris i have no clue what's going on adn assignments keep chaing :,(
 using namespace std;
     int main () { // main
 int choice;
+cout << "Welcome to The Temple of DOOM!" << endl; 
+cout << "=======MAIN MENU=======" << endl;
 cout << "Choose 1 to view inventory and choose 2 to view health bar, or choose 3 to access player stats." << endl;
 cin >> choice; // choosing where the code takes you 
         if (choice == 1){
