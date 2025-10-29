@@ -9,6 +9,7 @@ norris i have no clue what's going on adn assignments keep chaing :,(
 using namespace std;
     int main () { // main
 int choice;
+double meow;
 cout << "Welcome to The Temple of DOOM!" << endl; 
 cout << "=======MAIN MENU=======" << endl;
 cout << "Choose 1 to view inventory and choose 2 to view health bar, or choose 3 to access player stats." << endl;
@@ -74,4 +75,13 @@ cout << "Fully Recovered!" << endl;
         cout << "Attack: " << attack << "." << endl;
         cout << "Defense: " << defense << "." << endl;
     }}
+    else if (choice == meow) {
+        cout << endl;
+        cout << "RAWR! The kitty cat claws are out tonight!" << endl;
+    }
+    else {
+        cout << endl;
+        cout << "Try again!" << endl; 
+
+    }
         return 0; }
