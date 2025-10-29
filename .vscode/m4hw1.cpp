@@ -12,35 +12,35 @@ void part3();
 // magic words
 #include <iostream> 
 using namespace std;
-    int main() {
-        int selection; //  input
-        bool keep_going = true;
+int main() {
+    int selection; //  input
+    bool keep_going = true;
 
-        while (true == keep_going) {
-            cout << "Select Question part you would like to see." << endl; 
-            cout << "Type 1, 2, 3 or 0 to end." << endl;
-            cin >> selection; 
-    if (selection == 1) {
-        part1(); 
-        cout << endl;
-    }
-    else if (selection == 2) {
-        part2();
-        cout << endl; 
-    }
-    else if (selection == 3) {
-        part3();
-        cout << endl; 
-    }
-    else if (selection == 0) {
-        cout << "Bye! See ya later!" << endl; 
-        cout << endl; 
-        keep_going = false; 
-    }
-    else {
-        cout << "Type the options I gave you." << endl;
-    }
-}  
+    while (true == keep_going) {
+        cout << "Select Question part you would like to see." << endl; 
+        cout << "Type 1, 2, 3 or 0 to end." << endl;
+        cin >> selection; 
+        if (selection == 1) {
+            part1(); 
+            cout << endl;
+        }
+        else if (selection == 2) {
+            part2();
+            cout << endl; 
+        }
+        else if (selection == 3) {
+            part3();
+            cout << endl; 
+        }
+        else if (selection == 0) {
+            cout << "Bye! See ya later!" << endl; 
+            cout << endl; 
+            keep_going = false; 
+        }
+        else {
+            cout << "Type the options I gave you." << endl;
+        }
+    }  
     
     return 0;
 }
@@ -49,7 +49,7 @@ using namespace std;
 int const TABLE = 5;
 int n = 0;
 int product; 
- while (n < 12) {
+while (n < 12) {
     n++;
     product = TABLE * n;
     cout << TABLE << " times " << n << " is " << product << endl; 
@@ -57,21 +57,40 @@ int product;
 }
 
 void part2() {
-int table; 
-int n = 0; 
-int product;
-cout << "Enter a number from 1 to 12." << endl;
-cin >> table; 
-cout << endl;
-cout << endl;
-while (n < 12 && table >= 1 && table <= 12) {
-n++;
-product = table * n;
-cout << table << " times " << n << " is " << product << endl;
-}
+    int table; 
+    int n = 0; 
+    int product;
+    cout << "Enter a number from 1 to 12." << endl;
+    cin >> table; 
+    cout << endl;
+    cout << endl;
+    while (n < 12 && table >= 1 && table <= 12) {
+        n++;
+        product = table * n;
+        cout << table << " times " << n << " is " << product << endl;
+    }
 
 }
 
 void part3() {
-    cout << "Part 3 not ready yet" << endl; 
+    int table; 
+    int n = 0; 
+    int product;
+    bool okay = false;
+    // input validation
+    while (okay == false) {
+
+        cout << "Enter a number from 1 to 12." << endl;
+        cin >> table; 
+        cout << endl;
+
+        if (table >= 1 && table <= 12) 
+        okay = true;
+    }
+    cout << "You chose " << table << "." << endl;
+        while (n < 12 && table >= 1 && table <= 12) {
+            n++;
+            product = table * n;
+            cout << table << " times " << n << " is " << product << endl;
+        }
 }
