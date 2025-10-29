@@ -78,6 +78,7 @@ cout << "Fully Recovered!" << endl;
     else if (choice == meow) {
         cout << endl;
         cout << "RAWR! The kitty cat claws are out tonight!" << endl;
+        cout << "Try again!" << endl;
     }
     else {
         cout << endl;
