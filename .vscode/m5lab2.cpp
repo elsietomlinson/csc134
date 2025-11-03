@@ -8,7 +8,12 @@ csc -134
 //completeing bobs halffinished program 
 // get length
 // get width etc
-// fucntions go here. 
+// fucntions go here.
+
+// menu functions 
+void menu_main();
+void menu_area();
+// rectangle functions
 double getLength(); // get the length
 double getWidth(); // width
 double getArea(double length, double width); // areea
@@ -24,8 +29,6 @@ using namespace std;
 
 int main()
 {
-	// This program calculates the area of a rectangle.
-	// TODO: fix any syntax errors
 
 	
    double length,    // The rectangle's length
@@ -47,10 +50,48 @@ int main()
    return 0;
 }
 
-//***************************************************
-// TODO: write the getLength, getWidth, getArea,    *
-// and displayData functions below.                 *
-//***************************************************
+//menu functions
+void menu_main() {
+    // menu choice -- main area or quit
+        cout << " MAIN MENU " << endl; 
+        cout << "-----------" << endl; 
+        cout << "1. Area of a rectangle." << endl;
+        cout << "2. Exit." << endl;
+        cout << endl;
+        cout << "Enter Choice: " << endl;
+        int choice;
+        cin >> choice;
+
+                if (choice == 1) {
+                menu_area(); // area code
+            }
+            else if ( choice == 2) {
+                cout << "Goodbye." << endl;
+            }
+            else {
+                cout << "Invalid choice. Try again." << endl;
+            }
+}
+void menu_area() {
+double length,    // The rectangle's length
+          width,     // The rectangle's width
+          area;      // The rectangle's area
+          
+   // Get the rectangle's length.
+   length = getLength();
+   
+   // Get the rectangle's width.
+   width = getWidth();
+   
+   // Get the rectangle's area.
+   area = getArea(length, width);
+   
+   // Display the rectangle's data.
+   displayData(length, width, area);
+          
+}
+
+//rectangle functions
 
 double getLength(){
     double length; 
