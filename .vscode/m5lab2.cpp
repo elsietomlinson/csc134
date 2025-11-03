@@ -11,7 +11,7 @@ csc -134
 // fucntions go here. 
 double getLength(); // get the length
 double getWidth(); // width
-double getArea(); // areea
+double getArea(double length, double width); // areea
 void displayData (double length, double width, double area); // display
 // display data, void function simply shows the values and what
 #include <iostream>
