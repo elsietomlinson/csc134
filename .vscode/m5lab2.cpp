@@ -36,7 +36,7 @@ int main()
    length = getLength();
    
    // Get the rectangle's width.
-   width = getWidth()
+   width = getWidth();
    
    // Get the rectangle's area.
    area = getArea();
@@ -54,17 +54,17 @@ int main()
 
 double getLength(){
     cout << "code not ready yet" << endl; 
-
+return 0.0;
 } // get the length
 
 double getWidth() {
     cout << "code not ready yet" << endl; 
-
+return 0.0;
 } // width
 
-double getArea() {
+double getArea(double length, double width) {
     cout << "code not ready" << endl;
-
+return 0.0;
 } // areea
 
 void displayData (double length, double width, double area) {
