@@ -53,21 +53,29 @@ int main()
 //***************************************************
 
 double getLength(){
-    cout << "code not ready yet" << endl; 
-return 0.0;
+    double length; 
+    cout << "What is the length?" << endl; 
+    cin >> length;
+    return length;
 } // get the length
 
 double getWidth() {
-    cout << "code not ready yet" << endl; 
-return 0.0;
+    double width; 
+    cout << "What is the width?" << endl;
+    cin >> width;
+    return width;
 } // width
 
 double getArea(double length, double width) {
-    cout << "code not ready" << endl;
-return 0.0;
+    double area;
+    area = length * width;
+    return area;
+
 } // areea
 
 void displayData (double length, double width, double area) {
-    cout << "code not ready" << endl;
+    cout << "Rectangle is " << length << " by " << width << "." << endl;
+    cout << "Area is: " << area << endl;
+    return;// return is assumed at teh end for a void fucntion
 } // display
 // display data, void function simply shows the values and what
