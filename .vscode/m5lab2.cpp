@@ -39,7 +39,7 @@ int main()
    width = getWidth();
    
    // Get the rectangle's area.
-   area = getArea();
+   area = getArea(length, width);
    
    // Display the rectangle's data.
    displayData(length, width, area);
