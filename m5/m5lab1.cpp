@@ -5,6 +5,8 @@ csc134
 m5 lab1
 */
 
+
+
 //define all the functions
 void main_menu();
 void choice_front_door();
@@ -14,7 +16,28 @@ void house_inside();
 void house_basement();
 
 #include <iostream>
+#include <limits>
 using namespace std; 
+
+// input validation
+int get_valid_int(int min, int max) {
+    int choice;
+    while (true) {
+        cout << "Choose: ";
+        cin >> choice;
+
+        if (cin.fail()) { // not an integer
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input! Please enter a number between " << min << " and " << max << "." << endl;
+        } else if (choice < min || choice > max) { // out of range
+            cout << "Invalid choice. Enter a number between " << min << " and " << max << "." << endl;
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clean up input buffer
+            return choice;
+        }
+    }
+}
 int main () {
  cout << "M5LAB1 - Choose Your Own Adventure" << endl;
   // load up the main menu
@@ -45,17 +68,17 @@ void main_menu() {
   } else if (4 == choice) {
     cout << "Ok, quitting game" << endl;
     return; // go back to main()
-  } else {
-    cout << "That's not a valid choice, please try again." << endl; //  validation and tells liek "loops" it 
-    cin.ignore(); // clear the user input
-    main_menu();  // try again
-  }
+  } 
+    else {
+    cout << "That's not a valid choice, please try again." << endl;
+    cin.clear(); // clear any error flags
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard leftover input
+    return; // go back to main() without calling main_menu() again
 }
 
+  }
+
 // FUNCTION DEFINITIONS
-// OK, we have the prototypes at the top, but
-// now we have to actually write the functions.
-// They go here, after main().
 void choice_front_door() {
   cout << "Try the front door." << endl;
   cout << "It's locked. " << endl;
