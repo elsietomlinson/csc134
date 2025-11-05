@@ -82,11 +82,14 @@ void choice_back_door() {
     cin >> choice; 
         if (choice = 1 ) {
             cout << "It's just a cat! Keep moving along." << endl; 
-            choice_back_door();
+           house_inside();
         }
-        if ( choice = 2 ) {
+        else if ( choice = 2 ) {
             cout << "Ignore it! The house is way more interesting!" << endl;
-
+            house_inside();
+        }
+        else {
+            cout << "Oooh gurl, what is that?" << endl;
         }
 }
 
@@ -97,4 +100,18 @@ void choice_go_home() { cout << "Oh, well. Not everyone is adventurous!" << endl
 void house_inside() {
     cout << "The back door is unlocked!" << endl; 
     cout << "You enter the spooky house!" << endl; 
+    cout << "You hear a banging coming from the basement." ;
+    cout << "Do you : " << endl;
+    cout << "1. Investigate." << endl;
+    cout << "2. Leave, girl." << endl; 
+    int choice; 
+    cin >> choice; 
+    if (choice = 1 ) {
+        cout << "Dude that's a ghost!" << endl; 
+        cout << "GAME OVER" << endl; 
+        main_menu();
+    }
+    if (choice = 2) {
+        cout << "Goodjob!  You have good surivival instincts, you made it out." << endl; 
+    }
 }
