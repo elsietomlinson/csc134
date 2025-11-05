@@ -4,6 +4,14 @@ csc134
 11/5/2025
 m5 lab1
 */
+
+//define all the functions???
+void main_menu();
+void choice_front_door();
+void choice_back_door();
+void choice_go_home();
+void house_inside();
+
 #include <iostream>
 using namespace std; 
 int main () {
@@ -30,9 +38,9 @@ void main_menu() {
   if (1 == choice) {
     choice_front_door();
   } else if (2 == choice) {
-    // call choice 2 here
+    choice_back_door();
   } else if (3 == choice) {
-    // call choice 3 here
+   choice_go_home();
   } else if (4 == choice) {
     cout << "Ok, quitting game" << endl;
     return; // go back to main()
@@ -66,7 +74,7 @@ void choice_front_door() {
 void choice_back_door() { 
     cout << "You choose to go around the back.:" << endl;
     cout << "The house is so spooky and dark!" << endl; 
-    cout << "You here a rustling in the woods!" << endl;
+    cout << "You hear1 a rustling in the woods!" << endl;
     cout << "Do you: " << endl;
     cout << "1. Investigate." << endl; 
     cout << "2. Continue for the back door." << endl; 
@@ -74,12 +82,19 @@ void choice_back_door() {
     cin >> choice; 
         if (choice = 1 ) {
             cout << "It's just a cat! Keep moving along." << endl; 
+            choice_back_door();
         }
         if ( choice = 2 ) {
-            
+            cout << "Ignore it! The house is way more interesting!" << endl;
+
         }
 }
 
 void choice_go_home() { cout << "Oh, well. Not everyone is adventurous!" << endl; 
-main_menu();
+
+}
+
+void house_inside() {
+    cout << "The back door is unlocked!" << endl; 
+    cout << "You enter the spooky house!" << endl; 
 }
