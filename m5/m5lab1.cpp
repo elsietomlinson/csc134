@@ -80,11 +80,11 @@ void choice_back_door() {
     cout << "2. Continue for the back door." << endl; 
     int choice; 
     cin >> choice; 
-        if (choice = 1 ) {
+        if (choice == 1 ) {
             cout << "It's just a cat! Keep moving along." << endl; 
            house_inside();
         }
-        else if ( choice = 2 ) {
+        else if ( choice == 2 ) {
             cout << "Ignore it! The house is way more interesting!" << endl;
             house_inside();
         }
@@ -106,12 +106,12 @@ void house_inside() {
     cout << "2. Leave, girl." << endl; 
     int choice; 
     cin >> choice; 
-    if (choice = 1 ) {
+    if (choice == 1 ) {
         cout << "Dude that's a ghost!" << endl; 
         cout << "GAME OVER" << endl; 
         main_menu();
     }
-    if (choice = 2) {
+    if (choice == 2) {
         cout << "Goodjob!  You have good surivival instincts, you made it out." << endl; 
     }
 }
