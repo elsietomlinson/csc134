@@ -5,12 +5,13 @@ csc134
 m5 lab1
 */
 
-//define all the functions???
+//define all the functions
 void main_menu();
 void choice_front_door();
 void choice_back_door();
 void choice_go_home();
 void house_inside();
+void house_basement();
 
 #include <iostream>
 using namespace std; 
@@ -108,10 +109,15 @@ void house_inside() {
     cin >> choice; 
     if (choice == 1 ) {
         cout << "Dude that's a ghost!" << endl; 
-        cout << "GAME OVER" << endl; 
-        main_menu();
+       
+        house_basement();
     }
     if (choice == 2) {
         cout << "Goodjob!  You have good surivival instincts, you made it out." << endl; 
     }
+}
+ void house_basement() {
+   cout << "You climb down the creaky stairs to the dingy and dark basement." ;
+   cout << "You hear a creature moving in the dark!" ;
+   cout << endl;
 }
