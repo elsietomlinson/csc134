@@ -58,6 +58,12 @@ void main_menu() {
   cout << "4. [Quit]" << endl;
   cout << "Choose: ";
   int choice;
+   if (cin.fail()) { // handle bad input like letters
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input. Please enter a number between 1 and 4.\n";
+        return; // go back to top of loop
+    }
   cin >> choice;
   if (1 == choice) {
     choice_front_door();
@@ -67,16 +73,14 @@ void main_menu() {
    choice_go_home();
   } else if (4 == choice) {
     cout << "Ok, quitting game" << endl;
-    return; // go back to main()
+          return; // go back to main()
   } 
     else {
     cout << "That's not a valid choice, please try again." << endl;
-    cin.clear(); // clear any error flags
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard leftover input
-    return; // go back to main() without calling main_menu() again
+      return; // repeat loop
+    }
 }
 
-  }
 
 // FUNCTION DEFINITIONS
 void choice_front_door() {
