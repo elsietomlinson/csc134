@@ -52,11 +52,16 @@ void method2() {
    int poke_total = 0; 
 
    for (int i=0; i < SIZE; i++) {
+    cout << "# on  " << days[i] << ": " << endl;
+    cin >> pokemon[i];
+   }
+   for (int i=0; i < SIZE; i++) {
     cout << "Day \t Pokemon" << endl; 
     cout << days[i] << "\t" << pokemon[i] << endl; 
     // find the total 
     poke_total += pokemon[i];
    }
+   
    // [romt pit om a table]
    poke_avg = (double) poke_total / SIZE;
    cout << "Total = " << poke_total << endl; 
