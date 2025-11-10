@@ -15,8 +15,8 @@ void method2();
 
 int main() {
 // call functions
-void method1(); 
-void method2();
+ method1(); 
+ method2();
     return 0;
 }
 
@@ -61,5 +61,5 @@ void method2() {
    poke_avg = (double) poke_total / SIZE;
    cout << "Total = " << poke_total << endl; 
    cout << "Average = " << poke_avg << endl; 
-   
+
 }
