@@ -78,12 +78,34 @@ void Q1() {
     cin >> rfm3;
     cout << setprecision(2) << fixed;
     avgrain = avgRain(rfm1,rfm2, rfm3);
-    cout << "The average rain fall for " << m1 << ", " << m2 << ", " << m3 << " is " << avgrain << endl;
-
+    cout << "The average rain fall for " << m1 << ", " << m2 << ", " << m3 << " is " << avgrain << " inches. " << endl;
 }
 
 void Q2() {
-    cout << "NOt ready" << endl;
+    cout << "QUESTION 2:" << endl;
+    double length, width, height;  
+    double volume; 
+    bool calculate = true; // this ends the loop!!!!
+    cout << "Enter length." << endl; 
+    cin >> length;
+    cout << endl; 
+    cout << "Enter width." << endl; 
+    cin >> width;
+    cout << endl; 
+    cout << "Enter height." << endl; 
+    cout << endl; 
+    cin >> height; 
+    cout << endl; 
+
+    while (calculate == true) {
+        if (length > 0 && height > 0) {
+            volume = length * width * height; 
+            cout << "The volume of the block is " << volume << endl;
+        
+            calculate = false; 
+        }
+        
+    }
 }
 
 void Q3() {
