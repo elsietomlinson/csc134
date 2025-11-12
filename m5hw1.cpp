@@ -12,7 +12,6 @@ void Q2();
 void Q3();
 void Q4();
 void Q5();
-void Q6();
 
 int main() {
 
@@ -24,8 +23,7 @@ cout << "1. Question 1" << endl;
 cout << "2. Question 2" << endl;
 cout << "3. Question 3" << endl;
 cout << "4. Question 4" << endl; 
-cout << "5. Question 5" << endl;
-cout << "6. Question 6" << endl; 
+cout << "5. Question 5" << endl; 
 cout << "0. Quit. " << endl; 
 cout << "What's it gonna be?" << endl; 
 cin >> selection; 
@@ -45,9 +43,7 @@ cin >> selection;
     else if (selection = 5) {
         Q5();
     }
-    else if (selection = 6) {
-        Q6();
-    }
+    
     else if (selection = 0) {
         cout << "Bye. " ;
         keep_going = false;
@@ -60,9 +56,16 @@ cin >> selection;
     return 0; 
 }
 // END OF MAIN NOW WE START ACTUALLY CODING> 
-
+/// we have more functionsssss
+double avgrain (double num1, double num2, double num3) {
+    double avgrain = (num1 + num2 +num3) / 3.0;
+    return avgrain; 
+}
 void Q1() {
-    cout << "not ready" ;
+   cout << "QUESTION ONE:" << endl; 
+double avgrain;
+// my months that i can put in meow meow moew 
+string m1, m2, m3, m4;
 }
 
 void Q2() {
@@ -79,8 +82,4 @@ void Q4() {
 
 void Q5() {
     cout << "NOt ready" ;
-}
-
-void Q6() {
-    cout << "Not ready" ;
 }
