@@ -57,7 +57,7 @@ cin >> selection;
 }
 // END OF MAIN NOW WE START ACTUALLY CODING> 
 /// we have more functionsssss
-double avgrain (double num1, double num2, double num3) {
+double avgRain (double num1, double num2, double num3) {
     double avgrain = (num1 + num2 +num3) / 3.0;
     return avgrain;
 
@@ -72,7 +72,14 @@ void Q1() {
     cin >> m1;
     cin >> m2;
     cin >> m3;
-    
+    cout << "Enter the rain fall for each month" << endl; 
+    cin >> rfm1;
+    cin >> rfm2;
+    cin >> rfm3;
+    cout << setprecision(2) << fixed;
+    avgrain = avgRain(rfm1,rfm2, rfm3);
+    cout << "The average rain fall for " << m1 << ", " << m2 << ", " << m3 << " is " << avgrain << endl;
+
 }
 
 void Q2() {
