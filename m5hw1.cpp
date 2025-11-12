@@ -48,7 +48,15 @@ cin >> selection;
     else if (selection = 6) {
         Q6();
     }
-
-
+    else if (selection = 0) {
+        cout << "Bye. " ;
+        keep_going = false;
+        cout << endl; 
+    }
+    else {
+        cout << "Type any of the given values." << endl; 
+    }
+    
     return 0; 
 }
+// END OF MAIN NOW WE START ACTUALLY CODING> 
