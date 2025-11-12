@@ -59,13 +59,20 @@ cin >> selection;
 /// we have more functionsssss
 double avgrain (double num1, double num2, double num3) {
     double avgrain = (num1 + num2 +num3) / 3.0;
-    return avgrain; 
+    return avgrain;
+
 }
 void Q1() {
-   cout << "QUESTION ONE:" << endl; 
-double avgrain;
-// my months that i can put in meow meow moew 
-string m1, m2, m3, m4;
+    cout << "QUESTION ONE:" << endl; 
+    double avgrain;
+    // my months that i can put in meow meow moew 
+    string m1, m2, m3, m4;
+    double rfm1, rfm2, rfm3; // rainfall permonth
+    cout << "Enter 3 months of the year." << endl;
+    cin >> m1;
+    cin >> m2;
+    cin >> m3;
+    
 }
 
 void Q2() {
