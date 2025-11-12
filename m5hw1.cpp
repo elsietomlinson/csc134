@@ -60,3 +60,27 @@ cin >> selection;
     return 0; 
 }
 // END OF MAIN NOW WE START ACTUALLY CODING> 
+
+void Q1() {
+    cout << "not ready" ;
+}
+
+void Q2() {
+    cout << "NOt ready" << endl;
+}
+
+void Q3() {
+    cout << "Not ready" << endl; 
+}
+
+void Q4() {
+    cout << "not ready" ;
+}
+
+void Q5() {
+    cout << "NOt ready" ;
+}
+
+void Q6() {
+    cout << "Not ready" ;
+}
