@@ -171,13 +171,16 @@ void Q3() {
    }
 }
 
-void Q4() {
+void Q4() 
+{
+
     cout << "QUESTION 4: " << endl;
     int selection;
     bool program4 = true;
    
 
-    while (program4 == true) {
+    while (program4 == true) 
+    {
         cout << "Geometry Calculator!" << endl;
         cout << "1. Area of a circle." << endl; 
         cout << "2. Area of a rectangle." << endl; 
@@ -187,25 +190,29 @@ void Q4() {
         cin >> selection; 
         cout << endl; 
 
-        if (selection == 1) {
+        if (selection == 1) 
+        {
             double radius;
             double circleA; 
             const double PI = 3.14159;
             cout << "Enter Radius of your circle! MEOW." << endl; 
             cin >> radius; 
 
-            if (radius > 0) {
+            if (radius > 0) 
+            {
                 cout << setprecision(2) << fixed;
                 circleA = radius * radius * PI;
                 cout << "The area of your circle is " << circleA << endl; 
                 program4 = false; 
             }
-            else {
+            else 
+            {
                 cout << "Your radius must be positive." << endl; 
             }
         }
 
-        else if (selection == 2) { 
+        else if (selection == 2) 
+        { 
 
             double length;
             double width; 
@@ -216,19 +223,22 @@ void Q4() {
             cout << "Can I get that width now? " << endl; 
             cin >> width;
 
-            if (length > 0 && width > 0) {
+            if (length > 0 && width > 0) 
+            {
                 cout << setprecision(2) << fixed; 
                 rectangleA = length * width; 
                 cout << "Your area is " << rectangleA << endl; 
                 program4 = false;
             }
-            else {
+            else 
+            {
                 cout << "It's gotta be positive values friend." << endl;
                 cout << endl;
             }
         }
 
-        else if (selection == 3) {
+        else if (selection == 3) 
+        {
 
             // triangle area code goes here
             double base; 
@@ -239,32 +249,38 @@ void Q4() {
             cout << "Enter the height of the triangle. " << endl; 
             cin >> height;
     
-            if (base > 0 && height > 0) {
+            if (base > 0 && height > 0) 
+            {
                 cout << setprecision(2) << fixed;
                 triangleA = base * height * 0.5; 
                 cout << "The area of your triangle is " << triangleA << endl;
-            program4 = false;
+                program4 = false;
             }
-
-        }
-        else {
+             else 
+            {
             cout << "Your values must be positive." << endl; 
+            } 
         }
-    } 
+      
 
-    if (selection == 0) {
+        else if (selection == 0) 
+        {
         cout << "Ending program." << endl; 
         program4 = false;
-    }
-    else {
+        }
+
+        else 
+        {
         cout << "That is an invalid input, try again." << endl; 
         return Q4();
-    }
+        }
+    }    
 }
 
 
 // question 5
 void Q5() {
+    
     cout << "QUESTION 5:" << endl;
     int speed; 
     double totaltime;
