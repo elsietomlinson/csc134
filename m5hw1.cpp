@@ -28,23 +28,23 @@ cout << "0. Quit. " << endl;
 cout << "What's it gonna be?" << endl; 
 cin >> selection; 
 // if statements to create main menu
-    if (selection = 1) {
+    if (selection == 1) {
         Q1();
     }
-    else if (selection = 2) {
+    else if (selection == 2) {
         Q2();
     }
-    else if (selection = 3) {
+    else if (selection == 3) {
         Q3();
     }
-    else if (selection = 4) {
+    else if (selection == 4) {
         Q4();
     }
-    else if (selection = 5) {
+    else if (selection == 5) {
         Q5();
     }
     
-    else if (selection = 0) {
+    else if (selection == 0) {
         cout << "Bye. " ;
         keep_going = false;
         cout << endl; 
@@ -126,11 +126,11 @@ void Q3() {
             cout << "Roman numeral for " << num << " is I." << endl;
             program3 = false; 
         }
-        else if (num == 3) {
+        else if (num == 2) {
             cout << "The roman numeral for " << num << " is II." << endl;
             program3 = false; 
         }
-        else if (num == 4) {
+        else if (num == 3) {
             cout << "The roman numeral for " << num << " is III." << endl; 
             program3 = false;
         }
