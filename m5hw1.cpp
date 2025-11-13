@@ -184,6 +184,42 @@ void Q4() {
     cout << "Enter your choice!" << endl; 
     cin >> selection; 
     cout << endl; 
+    while (program4 == true) {
+        
+        if (selection == 1) {
+            double radius;
+            double circleA; 
+            const double PI = 3.14159;
+            cout << "Enter Radius of your circle! MEOW." << endl; 
+            cin >> radius; 
+            if (radius > 0) {
+                cout << setprecision(2) << fixed;
+                circleA = radius * radius * PI;
+                cout << "The area of your circle is " << circleA << endl; 
+                program4 == false; 
+            }
+            else {
+                cout << "Your radius must be positive." << endl; 
+            }
+
+        }
+    }
+    if (selection == 2) { // for rectangle. 
+        double length;
+        double width; 
+        double rectangleA; 
+        cout << "Enter rectangle length!" << endl;
+        cin >> length;
+        cout << endl; 
+        cout << "Can I get that width now? " << endl; 
+        cin >> width;
+        if (length > 0 && width > 0) {
+            cout << setprecision(2) << fixed; 
+            rectangleA = length * width; 
+            cout << "Your area is " << rectangleA << endl; 
+            program4 = false;
+        }
+    }
 }
 // question 5
 void Q5() {
