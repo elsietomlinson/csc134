@@ -104,12 +104,71 @@ void Q2() {
         
             calculate = false; 
         }
+        else {
+            cout << "Not a valid option." << endl;
+            return Q2();
+        }
         
     }
 }
 
 void Q3() {
-    cout << "Not ready" << endl; 
+   cout << "QUESTION 3:" << endl;
+   int num;
+   bool program3 = true;
+   cout << "Enter an integer 1 - 10: " << endl;
+   cin >> num;
+
+   while (program3 == true) {
+    if (num >= 1 && num <= 10) {
+        
+        if (num == 1) {
+            cout << "Roman numeral for " << num << " is I." << endl;
+            program3 = false; 
+        }
+        else if (num == 3) {
+            cout << "The roman numeral for " << num << " is II." << endl;
+            program3 = false; 
+        }
+        else if (num == 4) {
+            cout << "The roman numeral for " << num << " is III." << endl; 
+            program3 = false;
+        }
+        else if (num == 4) {
+            cout << "The roman numeral for " << num << " is IV." << endl; 
+            program3 = false; 
+        }
+        else if (num == 5) {
+            cout << "The roman numeral for " << num << " is V." << endl; 
+            program3 = false;
+        }
+        else if (num == 6) {
+            cout << "The roman numeral for " << num << " is VI." << endl; 
+            program3 = false;
+        }
+        else if (num == 7) {
+            cout << "The roman numeral for " << num << " is VII." << endl;
+            program3 = false;
+        }
+        else if (num == 8) {
+            cout << "The roman numeral for " << num << "is VIII." << endl; 
+            program3 = false; 
+        }
+        else if (num == 9) {
+            cout << "The roman numeral for " << num << " is IX." << endl; 
+            program3 = false; 
+        }
+        else if (num == 10) {
+            cout << "The roman numeral for " << num << " is  X." << endl; 
+            program3 = false; 
+        }
+        else {
+            cout << " Input values from 1 to 10." << endl; 
+            cout << endl; 
+            return Q3();
+        }
+    }
+   }
 }
 
 void Q4() {
