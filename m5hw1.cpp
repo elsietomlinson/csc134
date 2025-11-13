@@ -172,9 +172,24 @@ void Q3() {
 }
 
 void Q4() {
-    cout << "not ready" ;
+    cout << "QUESTION 4: " << endl;
 }
 
 void Q5() {
-    cout << "NOt ready" ;
+    cout << "QUESTION 5:" << endl;
+    int speed; 
+    double totaltime;
+    double dph; // distance per hour
+    cout << "Enter the speed of thine vehicle in mph: " << endl;
+    cin >> speed; 
+    cout << endl; 
+    cout << "Enter time spent traveling in hours. " << endl; 
+    cin >> totaltime; 
+
+    int hour = 0; 
+    while (hour < totaltime && totaltime > 0 && speed > 0) {
+        hour++;
+        dph = hour * speed; 
+        cout << "Hour: " << hour << " distance travelled is " << dph << endl;
+    }
 }
