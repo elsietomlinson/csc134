@@ -173,8 +173,19 @@ void Q3() {
 
 void Q4() {
     cout << "QUESTION 4: " << endl;
+    int selection;
+    bool program4 = true;
+    cout << "Geometry Calculator!" << endl;
+    // menu for the function
+    cout << "1. Area of a circle." << endl; 
+    cout << "2. Area of a rectangle." << endl; 
+    cout << "3. Area of a triangle." << endl; 
+    cout << "0. Go back to menu." << endl; 
+    cout << "Enter your choice!" << endl; 
+    cin >> selection; 
+    cout << endl; 
 }
-
+// question 5
 void Q5() {
     cout << "QUESTION 5:" << endl;
     int speed; 
