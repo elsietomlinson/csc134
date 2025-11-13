@@ -175,7 +175,10 @@ void Q4() {
     cout << "QUESTION 4: " << endl;
     int selection;
     bool program4 = true;
-    cout << "Geometry Calculator!" << endl;
+   
+
+    while (program4) {
+        cout << "Geometry Calculator!" << endl;
     cout << "1. Area of a circle." << endl; 
     cout << "2. Area of a rectangle." << endl; 
     cout << "3. Area of a triangle." << endl; 
@@ -183,8 +186,6 @@ void Q4() {
     cout << "Enter your choice!" << endl; 
     cin >> selection; 
     cout << endl; 
-
-    while (program4) {
         if (selection == 1) {
             double radius;
             double circleA; 
@@ -202,7 +203,7 @@ void Q4() {
             }
         }
 
-        if (selection == 2) { 
+         if (selection == 2) { 
             double length;
             double width; 
             double rectangleA; 
@@ -240,11 +241,11 @@ void Q4() {
             cout << "Your values must be positive." << endl; 
         }
     } 
-    else if (selection == 0) {
+     if (selection == 0) {
         cout << "Ending program." << endl; 
         program4 = false;
     }
-    else {
+    else if {
         cout << "That is an invalid input, try again." << endl; 
         return Q4();
     }
