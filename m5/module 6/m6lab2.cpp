@@ -45,7 +45,7 @@ int main() {
     
     // Room descriptions array
     string roomDescriptions[NUM_ROOMS] = {
-        "A grand entrance hall with a dusty chandelier hanging above.",
+        "A grand entrance hall with a gradiose chandelier hanging above.",
         "Walls lined with beautiful books. The air smells of old paper and you can see the knowledge bubbling under the surface.",
         "A spacious kitchen with an feast spread all over the table and counters.",
         "An overgrown garden with stone pathways and a small fountain, there are roses everywhere. You can smell the flowers.",
