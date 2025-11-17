@@ -31,7 +31,8 @@ enum Room {
     GARDEN = 3,
     BASEMENT = 4,
     OUTSIDE = 5,
-    NUM_ROOMS = 6
+    CAR = 6,
+    NUM_ROOMS = 7
 };
 
 int main() {
@@ -42,7 +43,8 @@ int main() {
         "Kitchen",
         "Garden",
         "Basement",
-        "Outside"
+        "Outside",
+        "Car"
     };
     
     // Room descriptions array
@@ -52,7 +54,8 @@ int main() {
         "A spacious kitchen with an feast spread all over the table and counters.",
         "An overgrown garden with stone pathways and a small fountain, there are roses everywhere. You can smell the flowers.",
         "A dark, damp basement with cobwebs in the corners.",
-        "You open the grand doors to the outside and see a broken down car." 
+        "You open the grand doors to the outside and see a broken down car." ,
+        "The car is rundown and gross, you should leave." 
     };
     
     // Adjacency list using a 2D array
@@ -96,6 +99,17 @@ int main() {
     connections[BASEMENT][EAST] = -1;               // No connection east
     connections[BASEMENT][SOUTH] = -1;              // No connection south
     connections[BASEMENT][WEST] = -1;               // No connection west
+    // Outside connections 
+    connections[OUTSIDE][NORTH] = ENTRANCE_HALL;
+    connections[OUTSIDE][EAST] = -1;
+    connections[OUTSIDE][SOUTH] = CAR;
+    connections[OUTSIDE][WEST] = -1;
+    
+    // connections for car
+    connections[CAR][NORTH] = OUTSIDE;
+    connections[CAR][EAST] = -1; 
+    connections[CAR][SOUTH] = -1;
+    connections[CAR][WEST] = -1;
     
     // Game state
     int currentRoom = ENTRANCE_HALL; // Start in the Entrance Hall
