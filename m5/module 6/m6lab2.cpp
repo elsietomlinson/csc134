@@ -46,9 +46,9 @@ int main() {
     // Room descriptions array
     string roomDescriptions[NUM_ROOMS] = {
         "A grand entrance hall with a dusty chandelier hanging above.",
-        "Walls lined with ancient books. The air smells of old paper.",
-        "A spacious kitchen with an old stove and wooden counter.",
-        "An overgrown garden with stone pathways and a small fountain.",
+        "Walls lined with beautiful books. The air smells of old paper and you can see the knowledge bubbling under the surface.",
+        "A spacious kitchen with an feast spread all over the table and counters.",
+        "An overgrown garden with stone pathways and a small fountain, there are roses everywhere. You can smell the flowers.",
         "A dark, damp basement with cobwebs in the corners."
     };
     
