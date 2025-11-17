@@ -30,7 +30,8 @@ enum Room {
     KITCHEN = 2,
     GARDEN = 3,
     BASEMENT = 4,
-    NUM_ROOMS = 5
+    OUTSIDE = 5,
+    NUM_ROOMS = 6
 };
 
 int main() {
@@ -40,7 +41,8 @@ int main() {
         "Library",
         "Kitchen",
         "Garden",
-        "Basement"
+        "Basement",
+        "Outside"
     };
     
     // Room descriptions array
@@ -49,7 +51,8 @@ int main() {
         "Walls lined with beautiful books. The air smells of old paper and you can see the knowledge bubbling under the surface.",
         "A spacious kitchen with an feast spread all over the table and counters.",
         "An overgrown garden with stone pathways and a small fountain, there are roses everywhere. You can smell the flowers.",
-        "A dark, damp basement with cobwebs in the corners."
+        "A dark, damp basement with cobwebs in the corners.",
+        "You open the grand doors to the outside and see a broken down car." 
     };
     
     // Adjacency list using a 2D array
@@ -67,7 +70,7 @@ int main() {
     // Entrance Hall connections
     connections[ENTRANCE_HALL][NORTH] = LIBRARY;    // Entrance Hall -> North -> Library
     connections[ENTRANCE_HALL][EAST] = KITCHEN;     // Entrance Hall -> East -> Kitchen
-    connections[ENTRANCE_HALL][SOUTH] = -1;         // No connection south
+    connections[ENTRANCE_HALL][SOUTH] = OUTSIDE;         // No connection south
     connections[ENTRANCE_HALL][WEST] = GARDEN;      // Entrance Hall -> West -> Garden
     
     // Library connections
