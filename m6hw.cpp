@@ -25,9 +25,7 @@ enum Room {
     MOMROOM = 4,
     NUM_ROOMS = 5
 };
-
-int main() {
-    // STRING NAMES FOR ROOMS 
+ // STRING NAMES FOR ROOMS 
     string roomnames[NUM_ROOMS] = {
         "Bedroom" ,
         "Bathroom" ,
@@ -35,7 +33,6 @@ int main() {
         "Kitchen" ,
         "Mom's Room"
     };
-
     // room descriptions for array meow 
     string roomdescriptions[NUM_ROOMS] = {
         "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
@@ -44,5 +41,10 @@ int main() {
         "The kitchen is dirty and dark. You see the key to the front door on the counter." , 
         "Your mothers room is dark and disheveled. There was a struggle in here."
     };
+
+int main() {
+   
+
+    return 0;
  
 }

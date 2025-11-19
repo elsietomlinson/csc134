@@ -9,6 +9,7 @@ m6lab2
 #include <map>
 using namespace std;
 
+
 // Define constants for directions
 enum Direction {
     NORTH = 0,
@@ -34,6 +35,10 @@ enum Room {
     CAR = 6,
     NUM_ROOMS = 7
 };
+
+// helper functions
+int go_command(string command, int currentRoom, int connections[][NUM_DIRECTIONS]);
+
 
 int main() {
     // Room names array
@@ -141,7 +146,26 @@ int main() {
         cin >> command;
         
         // Process movement commands
-        if (command == "north" || command == "n") {
+        if (command == "north" || command == "south" || command == "east" || command == "west") {
+            currentRoom = go_command(command, currentRoom, connections);
+        }
+         else if (command == "quit" || command == "q") {
+            gameRunning = false;
+        } else {
+            cout << "I don't understand that command." << endl;
+        }
+    }
+    
+    cout << "Thanks for playing!" << endl;
+    return 0;
+}
+
+// go_command 
+int go_command(string command, int currentRoom, int connections[][NUM_DIRECTIONS]) {
+    
+    // returns the new room the player is in
+    // (might be the old room)
+    if (command == "north" || command == "n") {
             if (connections[currentRoom][NORTH] != -1) {
                 currentRoom = connections[currentRoom][NORTH];
             } else {
@@ -165,13 +189,7 @@ int main() {
             } else {
                 cout << "You can't go that way." << endl;
             }
-        } else if (command == "quit" || command == "q") {
-            gameRunning = false;
-        } else {
-            cout << "I don't understand that command." << endl;
         }
-    }
-    
-    cout << "Thanks for playing!" << endl;
-    return 0;
+        // return new room
+        return currentRoom;
 }
