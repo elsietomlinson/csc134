@@ -44,7 +44,16 @@ enum Room {
 
 int main() {
    
-
+int connections[NUM_ROOMS][NUM_DIRECTIONS];
+    
+    // Initialize all connections to -1 (no connection)
+    for (int i = 0; i < NUM_ROOMS; i++) {
+        for (int j = 0; j < NUM_DIRECTIONS; j++) {
+            connections[i][j] = -1;
+        }
+    }
+    // now define the connections between all of the rooms 
+    connections[BEDROOM] 
     return 0;
  
 }
