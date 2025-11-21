@@ -63,8 +63,7 @@ int currentRoom = BEDROOM; // starting room (example)
   bool playing = true;
 
     // You can immediately use your room arrays
-    cout << roomnames[currentRoom] << endl;
-    cout << roomdescriptions[currentRoom] << endl;
+
 
     while (playing) {
 
