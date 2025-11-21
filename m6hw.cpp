@@ -66,7 +66,7 @@ int connections[NUM_ROOMS][NUM_DIRECTIONS];
     // connections for KITCHEN
     connections[KITCHEN][NORTH] = -1; 
     connections[KITCHEN][SOUTH] = BEDROOM;
-    connections[KITHEN][EAST] = -1; 
+    connections[KITCHEN][EAST] = -1; 
     connections[KITCHEN][WEST] = -1; 
 
     // connections for mom;s room
@@ -77,7 +77,7 @@ int connections[NUM_ROOMS][NUM_DIRECTIONS];
     
     // connection for bathroom 
     connections[BATHROOM][NORTH] = -1;
-    connetions[BATHROOM][SOUTH] = -1;
+    connections[BATHROOM][SOUTH] = -1;
     connections[BATHROOM][WEST] = HALLWAY;
     connections[BATHROOM][EAST] = -1; 
     return 0;
