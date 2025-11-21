@@ -48,43 +48,14 @@ enum Room {
     };
 
 int main() {
-   
-int connections[NUM_ROOMS][NUM_DIRECTIONS];
-    
-    // Initialize all connections to -1 (no connection)
-    for (int i = 0; i < NUM_ROOMS; i++) {
-        for (int j = 0; j < NUM_DIRECTIONS; j++) {
-            connections[i][j] = -1;
-        }
-    }
-    // now define the connections between all of the rooms 
-    connections[BEDROOM][NORTH] = HALLWAY;
-    connections[BEDROOM][SOUTH] = -1;
-    connections[BEDROOM][EAST] = -1;
-    connections[BEDROOM][WEST] = -1;
-    // connections for the hall way
-    connections[HALLWAY][NORTH] = KITCHEN;
-    connections[HALLWAY][SOUTH] = BEDROOM; 
-    connections[HALLWAY][EAST] = BATHROOM; 
-    connections[HALLWAY][WEST] = MOMROOM; 
+    // calling the movement function
+   initializeCONNECTIONS();
+int currentRoom = BEDROOM; // starting room (example)
 
-    // connections for KITCHEN
-    connections[KITCHEN][NORTH] = -1; 
-    connections[KITCHEN][SOUTH] = BEDROOM;
-    connections[KITCHEN][EAST] = -1; 
-    connections[KITCHEN][WEST] = -1; 
+    // You can immediately use your room arrays
+    cout << roomnames[currentRoom] << endl;
+    cout << roomdescriptions[currentRoom] << endl;
 
-    // connections for mom;s room
-    connections[MOMROOM][NORTH] = -1; 
-    connections[MOMROOM][SOUTH] = -1;
-    connections[MOMROOM][WEST] = -1;
-    connections[MOMROOM][EAST] = HALLWAY;
-    
-    // connection for bathroom 
-    connections[BATHROOM][NORTH] = -1;
-    connections[BATHROOM][SOUTH] = -1;
-    connections[BATHROOM][WEST] = HALLWAY;
-    connections[BATHROOM][EAST] = -1; 
     return 0;
  
 }
