@@ -46,7 +46,7 @@ enum Room {
         "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
         "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
         "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
-        "The kitchen is dirty and dark. You see the key to the front door on the counter." , 
+        "The kitchen is dirty and dark. You see the front door, you have the key from your moms room." , 
         "Your mothers room is dark and disheveled. There was a struggle in here."
     };
 
