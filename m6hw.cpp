@@ -53,7 +53,33 @@ int connections[NUM_ROOMS][NUM_DIRECTIONS];
         }
     }
     // now define the connections between all of the rooms 
-    connections[BEDROOM] 
+    connections[BEDROOM][NORTH] = HALLWAY;
+    connections[BEDROOM][SOUTH] = -1;
+    connections[BEDROOM][EAST] = -1;
+    connections[BEDROOM][WEST] = -1;
+    // connections for the hall way
+    connections[HALLWAY][NORTH] = KITCHEN;
+    connections[HALLWAY][SOUTH] = BEDROOM; 
+    connections[HALLWAY][EAST] = BATHROOM; 
+    connections[HALLWAY][WEST] = MOMROOM; 
+
+    // connections for KITCHEN
+    connections[KITCHEN][NORTH] = -1; 
+    connections[KITCHEN][SOUTH] = BEDROOM;
+    connections[KITHEN][EAST] = -1; 
+    connections[KITCHEN][WEST] = -1; 
+
+    // connections for mom;s room
+    connections[MOMROOM][NORTH] = -1; 
+    connections[MOMROOM][SOUTH] = -1;
+    connections[MOMROOM][WEST] = -1;
+    connections[MOMROOM][EAST] = HALLWAY;
+    
+    // connection for bathroom 
+    connections[BATHROOM][NORTH] = -1;
+    connetions[BATHROOM][SOUTH] = -1;
+    connections[BATHROOM][WEST] = HALLWAY;
+    connections[BATHROOM][EAST] = -1; 
     return 0;
  
 }
