@@ -7,6 +7,7 @@ prototype for my final project
 #include <string> 
 #include <vector>
 #include <map> 
+
 using namespace std;
 // here is my moving fucntion
  void initialCONNECTIONS();
@@ -50,6 +51,12 @@ enum Room {
     };
 
 int main() {
+// adding string for inventory
+vector<string> playerInventory;
+string roomItems[NUM_ROOMS] = {
+    "", "", "", "", "key"   // key is in mom's room
+};
+
     // calling the movement function
    initialCONNECTIONS();
 int currentRoom = BEDROOM; // starting room (example)
@@ -58,7 +65,84 @@ int currentRoom = BEDROOM; // starting room (example)
     cout << roomnames[currentRoom] << endl;
     cout << roomdescriptions[currentRoom] << endl;
 
+ int currentRoom = BEDROOM;
+    bool playing = true;
 
+    while (playing) {
+
+        // Show room name + description
+        cout << "\n--- " << roomnames[currentRoom] << " ---\n";
+        cout << roomdescriptions[currentRoom] << endl;
+
+        // Show item if present
+        if (roomItems[currentRoom] != "") {
+            cout << "You see a " << roomItems[currentRoom] << " here.\n";
+        }
+
+        // Get player input
+        cout << "\nEnter command (north/south/east/west, take, inventory, quit): ";
+        string command;
+        cin >> command;
+
+        // MOVEMENT COMMANDS
+        if (command == "north") {
+            if (connections[currentRoom][NORTH] != -1)
+                currentRoom = connections[currentRoom][NORTH];
+            else
+                cout << "You can't go that way.\n";
+        }
+        else if (command == "south") {
+            if (connections[currentRoom][SOUTH] != -1)
+                currentRoom = connections[currentRoom][SOUTH];
+            else
+                cout << "You can't go that way.\n";
+        }
+        else if (command == "east") {
+            if (connections[currentRoom][EAST] != -1)
+                currentRoom = connections[currentRoom][EAST];
+            else
+                cout << "You can't go that way.\n";
+        }
+        else if (command == "west") {
+            if (connections[currentRoom][WEST] != -1)
+                currentRoom = connections[currentRoom][WEST];
+            else
+                cout << "You can't go that way.\n";
+        }
+
+        // TAKE ITEM
+        else if (command == "take") {
+            if (roomItems[currentRoom] != "") {
+                cout << "You picked up the " << roomItems[currentRoom] << "!\n";
+                playerInventory.push_back(roomItems[currentRoom]);
+                roomItems[currentRoom] = ""; // remove from room
+            } else {
+                cout << "There's nothing to take.\n";
+            }
+        }
+
+        // PRINT INVENTORY
+        else if (command == "inventory") {
+            cout << "You are carrying:\n";
+            if (playerInventory.empty()) {
+                cout << "Nothing.\n";
+            } else {
+                for (string item : playerInventory) {
+                    cout << "- " << item << endl;
+                }
+            }
+        }
+
+        // QUIT GAME
+        else if (command == "quit") {
+            playing = false;
+        }
+
+        // UNKNOWN COMMAND
+        else {
+            cout << "I don't understand that command.\n";
+        }
+    }
 
     return 0;
  
