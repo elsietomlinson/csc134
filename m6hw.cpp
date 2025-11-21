@@ -9,7 +9,7 @@ prototype for my final project
 #include <map> 
 using namespace std;
 // here is my moving fucntion
- void initializeCONNECTIONS();
+ void initialCONNECTIONS();
 
 
 
@@ -39,6 +39,8 @@ enum Room {
         "Mom's Room"
     };
     // room descriptions for array meow 
+    int connections[NUM_ROOMS][NUM_DIRECTIONS];
+
     string roomdescriptions[NUM_ROOMS] = {
         "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
         "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
@@ -49,12 +51,14 @@ enum Room {
 
 int main() {
     // calling the movement function
-   initializeCONNECTIONS();
+   initialCONNECTIONS();
 int currentRoom = BEDROOM; // starting room (example)
 
     // You can immediately use your room arrays
     cout << roomnames[currentRoom] << endl;
     cout << roomdescriptions[currentRoom] << endl;
+
+
 
     return 0;
  
@@ -63,9 +67,8 @@ int currentRoom = BEDROOM; // starting room (example)
 
 // here is my initial conditions function
 
-void initialCONDITIONS () {
+void initialCONNECTIONS () {
        
-    int connections[NUM_ROOMS][NUM_DIRECTIONS];
         
         // Initialize all connections to -1 (no connection)
         for (int i = 0; i < NUM_ROOMS; i++) {
@@ -86,7 +89,7 @@ void initialCONDITIONS () {
 
         // connections for KITCHEN
         connections[KITCHEN][NORTH] = -1; 
-        connections[KITCHEN][SOUTH] = BEDROOM;
+        connections[KITCHEN][SOUTH] = HALLWAY;
         connections[KITCHEN][EAST] = -1; 
         connections[KITCHEN][WEST] = -1; 
 
