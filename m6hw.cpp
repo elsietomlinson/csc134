@@ -60,13 +60,11 @@ string roomItems[NUM_ROOMS] = {
     // calling the movement function
    initialCONNECTIONS();
 int currentRoom = BEDROOM; // starting room (example)
+  bool playing = true;
 
     // You can immediately use your room arrays
     cout << roomnames[currentRoom] << endl;
     cout << roomdescriptions[currentRoom] << endl;
-
- int currentRoom = BEDROOM;
-    bool playing = true;
 
     while (playing) {
 
