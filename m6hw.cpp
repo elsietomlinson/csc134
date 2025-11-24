@@ -11,7 +11,7 @@ prototype for my final project
 using namespace std;
 // here is my moving fucntion
  void initialCONNECTIONS();
-
+void showExits(int room);
 
 
 // constants for my directions
@@ -75,6 +75,7 @@ int main() {
         // Show room info
         cout << "\n--- " << roomnames[currentRoom] << " ---\n";
         cout << roomdescriptions[currentRoom] << endl;
+        showExits(currentRoom);
 
         // Show item if present
         if (roomItems[currentRoom] != "") {
@@ -132,9 +133,6 @@ int main() {
             else
                 currentRoom = nextRoom;
         }
-    else {
-        cout << "You can't go that way.\n";
-    }
 
 
 
@@ -241,4 +239,28 @@ void initialCONNECTIONS () {
         connections[BATHROOM][EAST] = -1; 
 
         // connections outside
+}
+//exits function
+void showExits(int room) {
+    cout << "Exits: ";
+
+    bool first = true;
+    if (connections[room][NORTH] != -1) {
+        cout << (first ? "" : ", ") << "north";
+        first = false;
+    }
+    if (connections[room][SOUTH] != -1) {
+        cout << (first ? "" : ", ") << "south";
+        first = false;
+    }
+    if (connections[room][EAST]  != -1) {
+        cout << (first ? "" : ", ") << "east";
+        first = false;
+    }
+    if (connections[room][WEST]  != -1) {
+        cout << (first ? "" : ", ") << "west";
+        first = false;
+    }
+
+    cout << "\n";
 }
