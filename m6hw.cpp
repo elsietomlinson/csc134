@@ -132,6 +132,23 @@ int main() {
             else
                 currentRoom = nextRoom;
         }
+        if (command == "north") {
+
+    // special case: trying to leave kitchen
+    if (currentRoom == KITCHEN && connections[KITCHEN][NORTH] == OUTSIDE) {
+        if (!hasKey) {
+            cout << "The front door is locked. You need the key from Mom's room.\n";
+        } else {
+            currentRoom = OUTSIDE;
+        }
+    }
+    else if (connections[currentRoom][NORTH] != -1) {
+        currentRoom = connections[currentRoom][NORTH];
+    }
+    else {
+        cout << "You can't go that way.\n";
+    }
+}
 
 
         // ---------------------------
