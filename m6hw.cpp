@@ -49,7 +49,8 @@ enum Room {
         "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
         "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
         "The kitchen is dirty and dark. You see the front door, you need the key from your moms room." , 
-        "Your mothers room is dark and disheveled. There was a struggle in here. You see a key on the dresser."
+        "Your mothers room is dark and disheveled. There was a struggle in here. You see a key on the dresser.",
+        "You have made it outside and beat the game! Have a nice life!"
     };
 
 int main() {
