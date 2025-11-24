@@ -48,7 +48,7 @@ enum Room {
         "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
         "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
         "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
-        "The kitchen is dirty and dark. You see the front door, you need the key from your moms room." , 
+        "The kitchen is dirty and dark. You see the front door, freedom is so close!" , 
         "Your mothers room is dark and disheveled. There was a struggle in here. You see a key on the dresser.",
         "You have made it outside and beat the game! Have a nice life!"
     };
@@ -59,7 +59,7 @@ int main() {
 
     // Item locations: key is in mom's room
     string roomItems[NUM_ROOMS] = {
-        "", "", "", "", "key"   // adjust index if needed
+        "book", "map", "knife", "", "key"   // adjust index if needed
     };
 
     // calling the movement function
@@ -68,8 +68,7 @@ int main() {
     int currentRoom = BEDROOM; // starting room
     bool playing = true;
     bool hasKey = false;
-    string command;
-
+   string command;
     // GAME LOOP
     while (playing) {
 
@@ -133,29 +132,16 @@ int main() {
             else
                 currentRoom = nextRoom;
         }
-        if (command == "north") {
-
-    // special case: trying to leave kitchen
-    if (currentRoom == KITCHEN && connections[KITCHEN][NORTH] == OUTSIDE) {
-        if (!hasKey) {
-            cout << "The front door is locked. You need the key from Mom's room.\n";
-        } else {
-            currentRoom = OUTSIDE;
-        }
-    }
-    else if (connections[currentRoom][NORTH] != -1) {
-        currentRoom = connections[currentRoom][NORTH];
-    }
     else {
         cout << "You can't go that way.\n";
     }
-}
+
 
 
         // ---------------------------
         // TAKE ITEM
         // ---------------------------
-        else if (command == "take") {
+             if (command == "take") {
             if (roomItems[currentRoom] != "") {
                 cout << "You picked up the " << roomItems[currentRoom] << "!\n";
 
@@ -207,9 +193,6 @@ int main() {
         // ---------------------------
         // UNKNOWN COMMAND
         // ---------------------------
-        else {
-            cout << "I don't understand that command.\n";
-        }
     }
 
     return 0;
