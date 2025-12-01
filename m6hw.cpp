@@ -50,7 +50,7 @@ enum Room {
         "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
         "The kitchen is dirty and dark. You see the front door, freedom is so close!" , 
         "Your mothers room is dark and disheveled. There was a struggle in here. You see a key on the dresser.",
-        "You have made it outside and beat the game! Time to head to the grocery store!"
+        "You have made it outside and beat the game! Time to run from the ominous sounds banging on the front door behind you."
     };
 
 int main() {
