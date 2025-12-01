@@ -22,7 +22,10 @@ class Restaurant {
         name = n; 
     }
     void setRating(double r) {
-        rating = r;
+        // only valide ratings allowed
+        if (r>=0 && r<=5) {
+             rating = r;
+        } 
     }
     string getName() const {
         return name;
