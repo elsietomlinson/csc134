@@ -68,6 +68,7 @@ int main() {
     int currentRoom = BEDROOM; // starting room
     bool playing = true;
     bool hasKey = false;
+    bool hasBag = false;
    string command;
     // GAME LOOP
     while (playing) {
@@ -140,28 +141,35 @@ int main() {
         // TAKE ITEM
         // ---------------------------
              if (command == "take") {
-            if (roomItems[currentRoom] != "") {
-                cout << "You picked up the " << roomItems[currentRoom] << "!\n";
 
-                // Add to inventory
-                playerInventory.push_back(roomItems[currentRoom]);
-
-                // Update hasKey?
-                if (roomItems[currentRoom] == "key") {
-                    hasKey = true;
-                }
-
-                // Remove it from room
-                roomItems[currentRoom] = "";
-            }
-            else {
-                cout << "There's nothing to take.\n";
-            }
-                if (roomItems[currentRoom] == "key") {
-                                    hasKey = true;
-            }
-
+    if (roomItems[currentRoom] == "") {
+        cout << "There's nothing to take.\n";
+    }
+    else {
+        // If the player does not have the bag, only allow taking the bag itself
+        if (!hasBag && roomItems[currentRoom] != "bag") {
+            cout << "You have no way to carry that. You should find something to hold items.\n";
         }
+        else {
+            // Take item
+            cout << "You picked up the " << roomItems[currentRoom] << "!\n";
+            playerInventory.push_back(roomItems[currentRoom]);
+
+            // Set flags
+            if (roomItems[currentRoom] == "key") {
+                hasKey = true;
+            }
+            if (roomItems[currentRoom] == "bag") {
+                hasBag = true;
+                cout << "You can now pick up other items.\n";
+            }
+
+            // Remove from room
+            roomItems[currentRoom] = "";
+        }
+    }
+}
+
 
 
         // ---------------------------
