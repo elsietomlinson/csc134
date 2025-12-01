@@ -140,9 +140,8 @@ else if (command == "west") {
         currentRoom = nextRoom;
 }
 
-// ---------------------------
+
 // TAKE
-// ---------------------------
 else if (command == "take") {
     valid = true;
 
@@ -162,9 +161,7 @@ else if (command == "take") {
     }
 }
 
-// ---------------------------
 // INVENTORY
-// ---------------------------
 else if (command == "inventory") {
     valid = true;
 
@@ -176,26 +173,23 @@ else if (command == "inventory") {
             cout << "- " << item << endl;
 }
 
-// ---------------------------
 // QUIT
-// ---------------------------
 else if (command == "quit") {
     valid = true;
     playing = false;
 }
 
-// ---------------------------
+
 // INVALID INPUT
-// ---------------------------
+
 if (!valid) {
     cout << "Invalid command. Try again.\n";
 }
 
 
 
-        // ---------------------------
+    
         // TAKE ITEM
-        // ---------------------------
              if (command == "take") {
 
     if (roomItems[currentRoom] == "") {
@@ -228,9 +222,8 @@ if (!valid) {
 
 
 
-        // ---------------------------
+        
         // INVENTORY
-        // ---------------------------
         else if (command == "inventory") {
             cout << "You are carrying:\n";
 
@@ -245,9 +238,8 @@ if (!valid) {
         }
 
 
-        // ---------------------------
+    
         // QUIT
-        // ---------------------------
         else if (command == "quit") {
             playing = false;
         }
