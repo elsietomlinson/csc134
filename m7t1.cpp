@@ -33,11 +33,27 @@ class Restaurant {
     double getRating() const {
         return rating;
     }
-  
+  void printInf() {
+    // output for the restaurant
+    cout << "Restaurant Name:" << endl;
+    cout << "Rating;" << rating << " out of five stars." << endl; 
+
+  }
 };
  int main () {
 
   cout << "M7T1 - Restaurant Reviews" << endl;
+// classes of the restaurants
+  Restaurant breakfast =  Restaurant ("Taco Bell", 3.5); 
+  Restaurant lunch     =  Restaurant("Jersey Mike's" , 4.5);
+  Restaurant dinner    = Restaurant("Jason's Deli", 3.5);
 
-    return 0;
+
+// printing function 
+  breakfast.printInf(); 
+  lunch.printInf();
+dinner.printInf();
+  
+  
+  return 0;
  }
