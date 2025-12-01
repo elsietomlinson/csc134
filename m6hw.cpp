@@ -87,53 +87,109 @@ int main() {
         cout << "\nEnter command (north/south/east/west, take, inventory, quit): ";
         cin >> command;
 
-        // ---------------------------
-        // MOVEMENT (with key lock)
-        // ---------------------------
+       bool valid = false;
 
-        if (command == "north") {
-            int nextRoom = connections[currentRoom][NORTH];
+// ---------------------------
+// MOVEMENT
+// ---------------------------
+if (command == "north") {
+    valid = true;
+    int nextRoom = connections[currentRoom][NORTH];
 
-            if (nextRoom == -1)
-                cout << "You can't go that way.\n";
-            else if (nextRoom == OUTSIDE && !hasKey)
-                cout << "The door is locked. You need the key from Mom's room.\n";
-            else
-                currentRoom = nextRoom;
-        }
+    if (nextRoom == -1)
+        cout << "You can't go that way.\n";
+    else if (nextRoom == OUTSIDE && !hasKey)
+        cout << "The door is locked. You need the key from Mom's room.\n";
+    else
+        currentRoom = nextRoom;
+}
 
-        else if (command == "south") {
-            int nextRoom = connections[currentRoom][SOUTH];
+else if (command == "south") {
+    valid = true;
+    int nextRoom = connections[currentRoom][SOUTH];
 
-            if (nextRoom == -1)
-                cout << "You can't go that way.\n";
-            else if (nextRoom == OUTSIDE && !hasKey)
-                cout << "The door is locked. You need the key from Mom's room.\n";
-            else
-                currentRoom = nextRoom;
-        }
+    if (nextRoom == -1)
+        cout << "You can't go that way.\n";
+    else if (nextRoom == OUTSIDE && !hasKey)
+        cout << "The door is locked. You need the key from Mom's room.\n";
+    else
+        currentRoom = nextRoom;
+}
 
-        else if (command == "east") {
-            int nextRoom = connections[currentRoom][EAST];
+else if (command == "east") {
+    valid = true;
+    int nextRoom = connections[currentRoom][EAST];
 
-            if (nextRoom == -1)
-                cout << "You can't go that way.\n";
-            else if (nextRoom == OUTSIDE && !hasKey)
-                cout << "The door is locked. You need the key from Mom's room.\n";
-            else
-                currentRoom = nextRoom;
-        }
+    if (nextRoom == -1)
+        cout << "You can't go that way.\n";
+    else if (nextRoom == OUTSIDE && !hasKey)
+        cout << "The door is locked. You need the key from Mom's room.\n";
+    else
+        currentRoom = nextRoom;
+}
 
-        else if (command == "west") {
-            int nextRoom = connections[currentRoom][WEST];
+else if (command == "west") {
+    valid = true;
+    int nextRoom = connections[currentRoom][WEST];
 
-            if (nextRoom == -1)
-                cout << "You can't go that way.\n";
-            else if (nextRoom == OUTSIDE && !hasKey)
-                cout << "The door is locked. You need the key from Mom's room.\n";
-            else
-                currentRoom = nextRoom;
-        }
+    if (nextRoom == -1)
+        cout << "You can't go that way.\n";
+    else if (nextRoom == OUTSIDE && !hasKey)
+        cout << "The door is locked. You need the key from Mom's room.\n";
+    else
+        currentRoom = nextRoom;
+}
+
+// ---------------------------
+// TAKE
+// ---------------------------
+else if (command == "take") {
+    valid = true;
+
+    if (!hasBag) {
+        cout << "You have no bag! You can't carry anything yet.\n";
+    }
+    else if (roomItems[currentRoom] != "") {
+        cout << "You picked up the " << roomItems[currentRoom] << "!\n";
+        playerInventory.push_back(roomItems[currentRoom]);
+
+        if (roomItems[currentRoom] == "key")
+            hasKey = true;
+
+        roomItems[currentRoom] = "";
+    } else {
+        cout << "There's nothing to take.\n";
+    }
+}
+
+// ---------------------------
+// INVENTORY
+// ---------------------------
+else if (command == "inventory") {
+    valid = true;
+
+    cout << "You are carrying:\n";
+    if (playerInventory.empty())
+        cout << "Nothing.\n";
+    else
+        for (string item : playerInventory)
+            cout << "- " << item << endl;
+}
+
+// ---------------------------
+// QUIT
+// ---------------------------
+else if (command == "quit") {
+    valid = true;
+    playing = false;
+}
+
+// ---------------------------
+// INVALID INPUT
+// ---------------------------
+if (!valid) {
+    cout << "Invalid command. Try again.\n";
+}
 
 
 
@@ -148,7 +204,7 @@ int main() {
     else {
         // If the player does not have the bag, only allow taking the bag itself
         if (!hasBag && roomItems[currentRoom] != "bag") {
-            cout << "You have no way to carry that. You should find something to hold items.\n";
+            cout << " You should find something to hold items.\n";
         }
         else {
             // Take item
