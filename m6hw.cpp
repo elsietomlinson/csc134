@@ -45,7 +45,7 @@ enum Room {
     int connections[NUM_ROOMS][NUM_DIRECTIONS];
 
     string roomdescriptions[NUM_ROOMS] = {
-        "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
+        "Welcome to your childhood bedroom that looks the same as the day you moved out for university. You see a bag, you might need this in the future." ,
         "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
         "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
         "The kitchen is dirty and dark. You see the front door, freedom is so close!" , 
@@ -59,7 +59,7 @@ int main() {
 
     // Item locations: key is in mom's room
     string roomItems[NUM_ROOMS] = {
-        "book", "map", "knife", "", "key"   // adjust index if needed
+        "bag", "map", "knife", "", "key"   // adjust index if needed
     };
 
     // calling the movement function
