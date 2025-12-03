@@ -42,28 +42,40 @@ void intro()  {
 }
 
 void game() {
-    srand(time(nullptr));
+  int player, computer;
+    int playerWins = 0, compWins = 0;
 
-    int player, computer;
+    while (playerWins < 2 && compWins < 2) {
+        cout << "\nEnter your choice (1=Rock, 2=Paper, 3=Scissors): ";
+        cin >> player;
 
-    cout << "Choose your weapon! (1=Rock, 2=Paper, 3=Scissors): ";
-    cin >> player;
+        computer = (rand() % 3) + 1;
 
-    computer = (rand() % 3) + 1;
+        cout << "You chose: " << player << endl;
+        cout << "Computer chose: " << computer << endl;
 
-    cout << "You chose: " << player << endl;
-    cout << "Computer chose: " << computer << endl;
+        if (player == computer) {
+            cout << "Round result: Tie!" << endl;
+        }
+        else if ((player == 1 && computer == 3) ||
+                 (player == 2 && computer == 1) ||
+                 (player == 3 && computer == 2)) {
+            cout << "Round result: You win!" << endl;
+            playerWins++;
+        }
+        else {
+            cout << "Round result: Computer wins!" << endl;
+            compWins++;
+        }
 
-    if (player == computer) {
-        cout << "It's a tie!" << endl;
+        cout << "Score: You " << playerWins << " - "
+             << compWins << " Computer\n";
     }
-    else if ((player == 1 && computer == 3) ||
-             (player == 2 && computer == 1) ||
-             (player == 3 && computer == 2)) {
-        cout << "You win!" << endl;
-    }
-    else {
-        cout << "Computer wins! Womp Womp!" << endl;
-    }
+
+    cout << "\n=== Final Result ===\n";
+    if (playerWins > compWins)
+        cout << "You win the match!" << endl;
+    else
+        cout << "Computer wins the match!" << endl;
 
 }
