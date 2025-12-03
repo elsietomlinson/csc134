@@ -46,7 +46,7 @@ void game() {
 
     int player, computer;
 
-    cout << "Enter your choice (1=Rock, 2=Paper, 3=Scissors): ";
+    cout << "Choose your weapon! (1=Rock, 2=Paper, 3=Scissors): ";
     cin >> player;
 
     computer = (rand() % 3) + 1;
@@ -63,7 +63,7 @@ void game() {
         cout << "You win!" << endl;
     }
     else {
-        cout << "Computer wins!" << endl;
+        cout << "Computer wins! Womp Womp!" << endl;
     }
 
 }
