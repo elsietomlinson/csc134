@@ -79,3 +79,17 @@ void game() {
         cout << "Computer wins the match!" << endl;
 
 }
+// here is the ai transcript for this 
+/*
+hey chat I want to write a C++ program for rock paper scissors. can you write me some skeleton code to show me how that would look like. Just base game mechanics
+would like to be able to write it into one singular function
+do you think we could implement a match feature to have it be best out of three? how would we added that into the already written code without changing it too much.
+
+
+
+
+
+
+
+
+*/
