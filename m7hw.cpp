@@ -13,6 +13,7 @@ using namespace std;
 
 void intro();
 void game(); 
+
 int main () {
 intro();
 
