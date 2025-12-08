@@ -92,135 +92,143 @@ void showExits(int room) {
 int main() {
     srand((unsigned)time(nullptr));
 
-    vector<string> playerInventory;
+    bool running = true; // controls full-game restarts
 
-    string roomItems[NUM_ROOMS] = { "bag", "map", "knife", "", "key", "" };
+    while (running) {
+        // RESET GAME STATE -----------------------------
+        vector<string> playerInventory;
+        string roomItems[NUM_ROOMS] = { "bag", "map", "knife", "", "key", "" };
+        initialCONNECTIONS();
 
-    initialCONNECTIONS();
+        int currentRoom = BEDROOM;
+        bool playing = true;
+        bool hasKey = false;
+        bool hasBag = false;
 
-    int currentRoom = BEDROOM;
-    bool playing = true;
-    bool hasKey = false;
-    bool hasBag = false;
+        slowPrint(MAGENTA + "You return to the house as the evening folds into itself...\n" + RESET, 18);
+        slowPrint(GREY + "There is a feeling of wrong geometry here — keep your eyes open.\n\n" + RESET, 18);
 
-    slowPrint(MAGENTA + "You return to the house as the evening folds into itself...\n" + RESET, 18);
-    slowPrint(GREY + "There is a feeling of wrong geometry here — keep your eyes open.\n\n" + RESET, 18);
 
-    while (playing) {
+        // MAIN GAME LOOP --------------------------------
+        while (playing) {
 
-        cout << CYAN << "\n=== " << roomnames[currentRoom] << " ===" << RESET << endl;
-        slowPrint(MAGENTA + roomdescriptions[currentRoom] + "\n" + RESET, 12);
+            cout << CYAN << "\n=== " << roomnames[currentRoom] << " ===" << RESET << endl;
+            slowPrint(MAGENTA + roomdescriptions[currentRoom] + "\n" + RESET, 12);
+            showExits(currentRoom);
 
-        showExits(currentRoom);
+            if (roomItems[currentRoom] != "") {
+                cout << YELLOW;
+                slowPrint("You notice: " + roomItems[currentRoom] + "\n", 10);
+                cout << RESET;
+            }
 
-        if (roomItems[currentRoom] != "") {
-            cout << YELLOW;
-            slowPrint("You notice: " + roomItems[currentRoom] + "\n", 10);
-            cout << RESET;
+            cout << "\n(try commands: north, south, east, west, take, inventory, quit)\n";
+            cout << "-> ";
+
+            string line;
+            getline(cin, line);
+            if (line.find_first_not_of(" \t") == string::npos) continue;
+
+            string command = toLower(line);
+            bool valid = false;
+
+            // MOVEMENT -------------------------------
+            if (command == "north" || command == "south" || command == "east" || command == "west") {
+                valid = true;
+
+                int dir = (command == "north") ? NORTH :
+                          (command == "south") ? SOUTH :
+                          (command == "east")  ? EAST : WEST;
+
+                int nextRoom = connections[currentRoom][dir];
+
+                if (nextRoom == -1) {
+                    cout << RED << "You can't go that way." << RESET << endl;
+                }
+                else if (nextRoom == OUTSIDE && !hasKey) {
+                    cout << RED << "The heavy door refuses you. A key would help." << RESET << endl;
+                }
+                else {
+                    slowPrint(GREEN + "You move " + command + ".\n" + RESET, 8);
+                    currentRoom = nextRoom;
+
+                    // WIN CONDITION HERE -------------
+                    if (currentRoom == OUTSIDE) {
+                        cout << "\n";
+                        slowPrint(MAGENTA + "You feel the air shift as you cross the threshold...\n", 30);
+                        slowPrint(GREEN + "YOU WIN!\n" + RESET, 35);
+                        slowPrint(CYAN + "Press ESC to restart or close the window.\n" + RESET, 20);
+
+                        playing = false;
+                        break; // leave gameplay loop
+                    }
+
+                    if ((rand() % 100) < 40) randomSpook();
+                }
+            }
+
+            // TAKE ITEM -------------------------------
+            else if (command == "take" || command == "grab" || command == "pick up") {
+                valid = true;
+                if (roomItems[currentRoom] == "") {
+                    cout << RED << "There's nothing obvious to take." << RESET << endl;
+                }
+                else if (!hasBag && roomItems[currentRoom] != "bag") {
+                    cout << RED << "You need something to carry items with.\n" << RESET;
+                }
+                else {
+                    slowPrint(GREEN + "You take the " + roomItems[currentRoom] + ".\n" + RESET, 12);
+                    playerInventory.push_back(roomItems[currentRoom]);
+
+                    if (roomItems[currentRoom] == "key") {
+                        hasKey = true;
+                        slowPrint(MAGENTA + "It vibrates faintly.\n" + RESET, 14);
+                    }
+                    if (roomItems[currentRoom] == "bag") {
+                        hasBag = true;
+                        slowPrint(CYAN + "You sling the bag over your shoulder.\n" + RESET, 14);
+                    }
+                    roomItems[currentRoom] = "";
+                }
+            }
+
+            // INVENTORY -------------------------------
+            else if (command == "inventory" || command == "i") {
+                valid = true;
+                cout << CYAN << "Inventory:" << RESET << endl;
+                if (playerInventory.empty()) cout << GREY << "(empty)\n" << RESET;
+                else for (auto &item : playerInventory)
+                    cout << "- " << YELLOW << item << RESET << endl;
+            }
+
+            // QUIT GAME --------------------------------
+            else if (command == "quit" || command == "exit") {
+                valid = true;
+                slowPrint(RED + "You decide to leave... for now.\n" + RESET, 14);
+                playing = false;
+            }
+
+            if (!valid) {
+                cout << RED << "Invalid command.\n" << RESET;
+            }
         }
 
-        cout << "\n(try commands: north, south, east, west, take, inventory, quit)\n";
+
+        // WAIT FOR ESC TO RESTART ----------------------------------
+        cout << GREY << "\nPress ESC to restart the game, or any other key to quit.\n" << RESET;
         cout << "-> ";
 
-        // FIXED input handling
-        string line;
-        getline(cin, line);
+        string restartInput;
+        getline(cin, restartInput);
 
-        // ignore blank input or whitespace-only lines
-        if (line.find_first_not_of(" \t") == string::npos)
-            continue;
-
-        string command = toLower(line);
-
-        bool valid = false;
-
-        // movement
-        if (command == "north" || command == "south" || command == "east" || command == "west") {
-            valid = true;
-            int dir = (command == "north") ? NORTH :
-                      (command == "south") ? SOUTH :
-                      (command == "east")  ? EAST :
-                                             WEST;
-
-            int nextRoom = connections[currentRoom][dir];
-
-            if (nextRoom == -1) {
-                cout << RED << "You can't go that way." << RESET << endl;
-            }
-            else if (nextRoom == OUTSIDE && !hasKey) {
-                cout << RED << "The heavy door refuses you. A key would help." << RESET << endl;
-            }
-
-            else {
-    slowPrint(GREEN + "You move " + command + ".\n" + RESET, 8);
-    currentRoom = nextRoom;
-
-    // Check for win condition
-    if (currentRoom == OUTSIDE) {
-        cout << "\n";
-        slowPrint(MAGENTA + "You feel the air shift as you cross the threshold...\n", 30);
-        slowPrint(GREEN + "YOU WIN!\n" + RESET, 35);
-        slowPrint(CYAN + "Press ESC to restart or close the game.\n" + RESET, 20);
-        playing = false;     // exits the loop
-        break;
-    }
-
-    if ((rand() % 100) < 40) randomSpook();
-}
-
-        }
-
-        // taking items
-        else if (command.rfind("take",0) == 0 || command.rfind("grab",0) == 0 || command.rfind("pick up",0) == 0) {
-            valid = true;
-
-            if (roomItems[currentRoom] == "") {
-                cout << RED << "There's nothing obvious to take." << RESET << endl;
-            }
-            else if (!hasBag && roomItems[currentRoom] != "bag") {
-                cout << RED << "You need something to carry items in… maybe back in your room." << RESET << endl;
-            }
-            else {
-                slowPrint(GREEN + "You take the " + roomItems[currentRoom] + ".\n" + RESET, 12);
-
-                playerInventory.push_back(roomItems[currentRoom]);
-
-                if (roomItems[currentRoom] == "key") {
-                    hasKey = true;
-                    slowPrint(MAGENTA + "The key vibrates faintly.\n" + RESET, 14);
-                }
-                if (roomItems[currentRoom] == "bag") {
-                    hasBag = true;
-                    slowPrint(CYAN + "You slip the bag over your shoulder.\n" + RESET, 14);
-                }
-
-                roomItems[currentRoom] = "";
-            }
-        }
-
-        // inventory
-        else if (command == "inventory" || command == "i") {
-            valid = true;
-            cout << CYAN << "Inventory:" << RESET << endl;
-            if (playerInventory.empty()) cout << GREY << "(empty)" << RESET << endl;
-            else for (auto &it : playerInventory)
-                cout << "- " << YELLOW << it << RESET << endl;
-        }
-
-        // quit
-        else if (command == "quit" || command == "exit") {
-            valid = true;
-            slowPrint(RED + "You decide to leave... for now.\n" + RESET, 14);
-            playing = false;
-        }
-
-        if (!valid) {
-            cout << RED << "Invalid command. Try a direction or an action." << RESET << endl;
+        if (restartInput != "\x1B") {  // ESC = ASCII 27
+            running = false;          // end entire program
         }
     }
 
     return 0;
 }
+
 
 // initial connections
 void initialCONNECTIONS () {
