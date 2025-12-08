@@ -247,4 +247,8 @@ void showExits(int room) {
     }
     if (connections[room][WEST] != -1) {
         cout << (first ? "" : ", ") << "west";
-        fi
+          first = false;
+    }
+
+    cout << endl;
+}
