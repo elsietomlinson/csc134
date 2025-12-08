@@ -126,7 +126,7 @@ int main() {
         string line;
         getline(cin, line);
 
-        // ignore blank input
+        // ignore blank input or whitespace-only lines
         if (line.find_first_not_of(" \t") == string::npos)
             continue;
 
@@ -159,7 +159,7 @@ int main() {
         }
 
         // taking items
-        else if (command == "take" || command == "grab" || command == "pick up") {
+        else if (command.rfind("take",0) == 0 || command.rfind("grab",0) == 0 || command.rfind("pick up",0) == 0) {
             valid = true;
 
             if (roomItems[currentRoom] == "") {
@@ -212,10 +212,12 @@ int main() {
 
 // initial connections
 void initialCONNECTIONS () {
-    for (int i = 0; i < NUM_ROOMS; i++)
-        for (int j = 0; j < NUM_DIRECT
-IONS; j++)
+    // initialize
+    for (int i = 0; i < NUM_ROOMS; i++) {
+        for (int j = 0; j < NUM_DIRECTIONS; j++) {
             connections[i][j] = -1;
+        }
+    }
 
     connections[BEDROOM][NORTH]  = HALLWAY;
 
