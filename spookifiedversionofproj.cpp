@@ -1,5 +1,5 @@
 /* elsie tomlinson
-m6hw
+final project
 11/18/2025
 spookified mysterious edition
 */
@@ -150,12 +150,24 @@ int main() {
             else if (nextRoom == OUTSIDE && !hasKey) {
                 cout << RED << "The heavy door refuses you. A key would help." << RESET << endl;
             }
-            else {
-                slowPrint(GREEN + "You move " + command + ".\n" + RESET, 8);
-                currentRoom = nextRoom;
 
-                if ((rand() % 100) < 40) randomSpook();
-            }
+            else {
+    slowPrint(GREEN + "You move " + command + ".\n" + RESET, 8);
+    currentRoom = nextRoom;
+
+    // Check for win condition
+    if (currentRoom == OUTSIDE) {
+        cout << "\n";
+        slowPrint(MAGENTA + "You feel the air shift as you cross the threshold...\n", 30);
+        slowPrint(GREEN + "YOU WIN!\n" + RESET, 35);
+        slowPrint(CYAN + "Press ESC to restart or close the game.\n" + RESET, 20);
+        playing = false;     // exits the loop
+        break;
+    }
+
+    if ((rand() % 100) < 40) randomSpook();
+}
+
         }
 
         // taking items
