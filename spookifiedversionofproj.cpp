@@ -39,7 +39,9 @@ enum Direction { NORTH = 0, SOUTH = 1, EAST = 2, WEST = 3, NUM_DIRECTIONS = 4 };
 enum Room { BEDROOM = 0, BATHROOM = 1, HALLWAY = 2, KITCHEN = 3, MOMROOM = 4, OUTSIDE = 5, NUM_ROOMS = 6 };
 
 // ROOM NAMES & DESCRIPTIONS
-string roomnames[NUM_ROOMS] = { "Bedroom", "Bathroom", "Hallway", "Kitchen", "Mom's Room", "Outside" };
+string roomnames[NUM_ROOMS] = {
+    "Bedroom", "Bathroom", "Hallway", "Kitchen", "Mom's Room", "Outside"
+};
 string roomdescriptions[NUM_ROOMS] = {
     "Faded wallpaper peels in slow, unreadable patterns. A single drawer sits half-open, as if expecting you.",
     "The sink is full of cold water. A pale pattern stains the tile; you can't tell if it's shadow or something else.",
@@ -51,7 +53,7 @@ string roomdescriptions[NUM_ROOMS] = {
 
 int connections[NUM_ROOMS][NUM_DIRECTIONS];
 
-// small utility: slow-print for atmosphere
+// slow-print for atmosphere
 void slowPrint(const string &text, int ms) {
     for (char c : text) {
         cout << c << flush;
@@ -59,23 +61,16 @@ void slowPrint(const string &text, int ms) {
     }
 }
 
-// small random ambient messages to create unease
+// spooky ambient messages
 void randomSpook() {
-    int r = rand() % 8; // tune chance
+    int r = rand() % 8;
     switch (r) {
-        case 0:
-            cout << GREY; slowPrint("A whisper just beyond hearing...\n", 18); cout << RESET; break;
-        case 1:
-            cout << MAGENTA; slowPrint("The map on the wall seems to blink when you turn away.\n", 22); cout << RESET; break;
-        case 2:
-            cout << GREY << "Something moved in the corner of your eye." << RESET << "\n"; break;
-        case 3:
-            cout << CYAN << "A soft ticking begins, then stops as if embarrassed.\n" << RESET; break;
-        case 4:
-            cout << MAGENTA; slowPrint("For a heartbeat you think you saw your reflection smile.\n", 25); cout << RESET; break;
-        default:
-            // mostly silence
-            break;
+        case 0: cout << GREY; slowPrint("A whisper just beyond hearing...\n", 18); cout << RESET; break;
+        case 1: cout << MAGENTA; slowPrint("The map on the wall seems to blink when you turn away.\n", 22); cout << RESET; break;
+        case 2: cout << GREY << "Something moved in the corner of your eye." << RESET << "\n"; break;
+        case 3: cout << CYAN << "A soft ticking begins, then stops as if embarrassed.\n" << RESET; break;
+        case 4: cout << MAGENTA; slowPrint("For a heartbeat you think you saw your reflection smile.\n", 25); cout << RESET; break;
+        default: break;
     }
 }
 
@@ -84,7 +79,6 @@ string toLower(string s) {
     return s;
 }
 
-// show available exits (keeps original behavior)
 void showExits(int room) {
     cout << CYAN << "Exits: " << RESET;
     bool first = true;
@@ -100,7 +94,6 @@ int main() {
 
     vector<string> playerInventory;
 
-    // Items in rooms (bag in bedroom, key in mom's room)
     string roomItems[NUM_ROOMS] = { "bag", "map", "knife", "", "key", "" };
 
     initialCONNECTIONS();
@@ -114,6 +107,7 @@ int main() {
     slowPrint(GREY + "There is a feeling of wrong geometry here — keep your eyes open.\n\n" + RESET, 18);
 
     while (playing) {
+
         cout << CYAN << "\n=== " << roomnames[currentRoom] << " ===" << RESET << endl;
         slowPrint(MAGENTA + roomdescriptions[currentRoom] + "\n" + RESET, 12);
 
@@ -128,11 +122,14 @@ int main() {
         cout << "\n(try commands: north, south, east, west, take, inventory, quit)\n";
         cout << "-> ";
 
+        // FIXED input handling
         string line;
         getline(cin, line);
-        if (line.empty()) { // handle leading newline
-            getline(cin, line);
-        }
+
+        // ignore blank input
+        if (line.find_first_not_of(" \t") == string::npos)
+            continue;
+
         string command = toLower(line);
 
         bool valid = false;
@@ -140,7 +137,11 @@ int main() {
         // movement
         if (command == "north" || command == "south" || command == "east" || command == "west") {
             valid = true;
-            int dir = (command == "north") ? NORTH : (command == "south") ? SOUTH : (command == "east") ? EAST : WEST;
+            int dir = (command == "north") ? NORTH :
+                      (command == "south") ? SOUTH :
+                      (command == "east")  ? EAST :
+                                             WEST;
+
             int nextRoom = connections[currentRoom][dir];
 
             if (nextRoom == -1) {
@@ -153,38 +154,47 @@ int main() {
                 slowPrint(GREEN + "You move " + command + ".\n" + RESET, 8);
                 currentRoom = nextRoom;
 
-                // small chance to trigger ambient
                 if ((rand() % 100) < 40) randomSpook();
             }
         }
-        // take / pick up
-        else if (command.rfind("take",0) == 0 || command.rfind("pick up",0) == 0 || command.rfind("grab",0) == 0) {
+
+        // taking items
+        else if (command == "take" || command == "grab" || command == "pick up") {
             valid = true;
 
             if (roomItems[currentRoom] == "") {
                 cout << RED << "There's nothing obvious to take." << RESET << endl;
             }
+            else if (!hasBag && roomItems[currentRoom] != "bag") {
+                cout << RED << "You need something to carry items in… maybe back in your room." << RESET << endl;
+            }
             else {
-                // if item is not bag and player lacks bag -> block
-                if (!hasBag && roomItems[currentRoom] != "bag") {
-                    cout << RED << "You have nothing to carry items with. Perhaps there's something in your room." << RESET << endl;
+                slowPrint(GREEN + "You take the " + roomItems[currentRoom] + ".\n" + RESET, 12);
+
+                playerInventory.push_back(roomItems[currentRoom]);
+
+                if (roomItems[currentRoom] == "key") {
+                    hasKey = true;
+                    slowPrint(MAGENTA + "The key vibrates faintly.\n" + RESET, 14);
                 }
-                else {
-                    slowPrint(GREEN + "You take the " + roomItems[currentRoom] + ".\n" + RESET, 12);
-                    playerInventory.push_back(roomItems[currentRoom]);
-                    if (roomItems[currentRoom] == "key") { hasKey = true; slowPrint(MAGENTA + "The key feels oddly warm.\n" + RESET, 14); }
-                    if (roomItems[currentRoom] == "bag") { hasBag = true; slowPrint(CYAN + "You sling the bag over your shoulder; it fits like memory.\n" + RESET, 14); }
-                    roomItems[currentRoom] = "";
+                if (roomItems[currentRoom] == "bag") {
+                    hasBag = true;
+                    slowPrint(CYAN + "You slip the bag over your shoulder.\n" + RESET, 14);
                 }
+
+                roomItems[currentRoom] = "";
             }
         }
+
         // inventory
         else if (command == "inventory" || command == "i") {
             valid = true;
             cout << CYAN << "Inventory:" << RESET << endl;
             if (playerInventory.empty()) cout << GREY << "(empty)" << RESET << endl;
-            else for (auto &it : playerInventory) cout << "- " << YELLOW << it << RESET << endl;
+            else for (auto &it : playerInventory)
+                cout << "- " << YELLOW << it << RESET << endl;
         }
+
         // quit
         else if (command == "quit" || command == "exit") {
             valid = true;
@@ -202,7 +212,10 @@ int main() {
 
 // initial connections
 void initialCONNECTIONS () {
-    for (int i = 0; i < NUM_ROOMS; i++) for (int j = 0; j < NUM_DIRECTIONS; j++) connections[i][j] = -1;
+    for (int i = 0; i < NUM_ROOMS; i++)
+        for (int j = 0; j < NUM_DIRECT
+IONS; j++)
+            connections[i][j] = -1;
 
     connections[BEDROOM][NORTH]  = HALLWAY;
 
