@@ -3,18 +3,32 @@ m6hw
 11/18/2025
 prototype for my final project
 */
+/* elsie tomlinson
+m6hw
+11/18/2025
+prototype for my final project
+*/
 #include <iostream> 
 #include <string> 
 #include <vector>
 #include <map> 
 
 using namespace std;
-// here is my moving fucntion
- void initialCONNECTIONS();
+
+// ===== ANSI COLOR CODES =====
+const string RED     = "\033[31m";
+const string GREEN   = "\033[32m";
+const string YELLOW  = "\033[33m";
+const string BLUE    = "\033[34m";
+const string MAGENTA = "\033[35m";
+const string CYAN    = "\033[36m";
+const string RESET   = "\033[0m";
+
+// function prototypes
+void initialCONNECTIONS();
 void showExits(int room);
 
-
-// constants for my directions
+// constants for directions
 enum Direction {
     NORTH = 0,
     SOUTH = 1, 
@@ -22,7 +36,8 @@ enum Direction {
     WEST = 3,
     NUM_DIRECTIONS = 4
 };
-//DEFINE MY ROOMS
+
+// DEFINE ROOMS
 enum Room {
     BEDROOM = 0, 
     BATHROOM = 1,
@@ -32,272 +47,192 @@ enum Room {
     OUTSIDE = 5,
     NUM_ROOMS = 6
 };
- // STRING NAMES FOR ROOMS 
-    string roomnames[NUM_ROOMS] = {
-        "Bedroom" ,
-        "Bathroom" ,
-        "Hallway" ,
-        "Kitchen" ,
-        "Mom's Room",
-        "Outside."
-    };
-    // room descriptions for array meow 
-    int connections[NUM_ROOMS][NUM_DIRECTIONS];
 
-    string roomdescriptions[NUM_ROOMS] = {
-        "Welcome to your childhood bedroom that looks the same as the day you moved out for university." ,
-        "The bathroom light flickers on as you look around the dimly lit room. It's dirty in here." , 
-        "The hallway is dark and dim. You see your grandfather's old map haning on the wall." ,
-        "The kitchen is dirty and dark. You see the front door, freedom is so close!" , 
-        "Your mothers room is dark and disheveled. There was a struggle in here. You see a key on the dresser.",
-        "You have made it outside and beat the game! Time to run from the ominous sounds banging on the front door behind you."
-    };
+// ROOM NAMES
+string roomnames[NUM_ROOMS] = {
+    "Bedroom" ,
+    "Bathroom" ,
+    "Hallway" ,
+    "Kitchen" ,
+    "Mom's Room",
+    "Outside"
+};
+
+// ROOM DESCRIPTIONS
+string roomdescriptions[NUM_ROOMS] = {
+    "Welcome to your childhood bedroom that looks the same as the day you moved out.",
+    "The bathroom light flickers on as you look around the dimly lit, dirty room.",
+    "The hallway is dark and quiet. Your grandfather's old map hangs on the wall.",
+    "The kitchen is cluttered and dim. You see the front door—freedom is close!",
+    "Your mother's room is dark and disheveled. A struggle happened here. A key rests on the dresser.",
+    "You made it outside! Time to run from the ominous banging behind the door."
+};
+
+int connections[NUM_ROOMS][NUM_DIRECTIONS];
 
 int main() {
-    // adding string for inventory
     vector<string> playerInventory;
 
-    // Item locations: key is in mom's room
+    // Items in each room
     string roomItems[NUM_ROOMS] = {
-        "bag", "map", "knife", "", "key"   // adjust index if needed
+        "bag",   // bedroom
+        "map",   // bathroom
+        "knife", // hallway
+        "",      // kitchen
+        "key",   // mom's room
+        ""       // outside
     };
 
-    // calling the movement function
     initialCONNECTIONS();
 
-    int currentRoom = BEDROOM; // starting room
+    int currentRoom = BEDROOM;
     bool playing = true;
     bool hasKey = false;
     bool hasBag = false;
-   string command;
+
+    string command;
+
     // GAME LOOP
     while (playing) {
 
-        // Show room info
-        cout << "\n--- " << roomnames[currentRoom] << " ---\n";
-        cout << roomdescriptions[currentRoom] << endl;
+        // Room Header
+        cout << CYAN << "\n=== " << roomnames[currentRoom] << " ===" << RESET << endl;
+
+        // Description
+        cout << MAGENTA << roomdescriptions[currentRoom] << RESET << endl;
+
         showExits(currentRoom);
 
         // Show item if present
         if (roomItems[currentRoom] != "") {
-            cout << "You see a " << roomItems[currentRoom] << " here.\n";
+            cout << YELLOW << "You see a " << roomItems[currentRoom] << " here." 
+                 << RESET << endl;
         }
 
         // Input
         cout << "\nEnter command (north/south/east/west, take, inventory, quit): ";
         cin >> command;
 
-       bool valid = false;
+        bool valid = false;
 
-// ---------------------------
-// MOVEMENT
-// ---------------------------
-if (command == "north") {
-    valid = true;
-    int nextRoom = connections[currentRoom][NORTH];
+        // MOVEMENT -----------------------------
+        if (command == "north" || command == "south" ||
+            command == "east"  || command == "west")
+        {
+            valid = true;
 
-    if (nextRoom == -1)
-        cout << "You can't go that way.\n";
-    else if (nextRoom == OUTSIDE && !hasKey)
-        cout << "The door is locked. You need the key from Mom's room.\n";
-    else
-        currentRoom = nextRoom;
-}
+            int direction;
+            if (command == "north") direction = NORTH;
+            if (command == "south") direction = SOUTH;
+            if (command == "east")  direction = EAST;
+            if (command == "west")  direction = WEST;
 
-else if (command == "south") {
-    valid = true;
-    int nextRoom = connections[currentRoom][SOUTH];
+            int nextRoom = connections[currentRoom][direction];
 
-    if (nextRoom == -1)
-        cout << "You can't go that way.\n";
-    else if (nextRoom == OUTSIDE && !hasKey)
-        cout << "The door is locked. You need the key from Mom's room.\n";
-    else
-        currentRoom = nextRoom;
-}
-
-else if (command == "east") {
-    valid = true;
-    int nextRoom = connections[currentRoom][EAST];
-
-    if (nextRoom == -1)
-        cout << "You can't go that way.\n";
-    else if (nextRoom == OUTSIDE && !hasKey)
-        cout << "The door is locked. You need the key from Mom's room.\n";
-    else
-        currentRoom = nextRoom;
-}
-
-else if (command == "west") {
-    valid = true;
-    int nextRoom = connections[currentRoom][WEST];
-
-    if (nextRoom == -1)
-        cout << "You can't go that way.\n";
-    else if (nextRoom == OUTSIDE && !hasKey)
-        cout << "The door is locked. You need the key from Mom's room.\n";
-    else
-        currentRoom = nextRoom;
-}
-
-
-// TAKE
-else if (command == "take") {
-    valid = true;
-
-    if (!hasBag) {
-        cout << "You have no bag! You can't carry anything yet.\n";
-    }
-    else if (roomItems[currentRoom] != "") {
-        cout << "You picked up the " << roomItems[currentRoom] << "!\n";
-        playerInventory.push_back(roomItems[currentRoom]);
-
-        if (roomItems[currentRoom] == "key")
-            hasKey = true;
-
-        roomItems[currentRoom] = "";
-    } else {
-        cout << "There's nothing to take.\n";
-    }
-}
-
-// INVENTORY
-else if (command == "inventory") {
-    valid = true;
-
-    cout << "You are carrying:\n";
-    if (playerInventory.empty())
-        cout << "Nothing.\n";
-    else
-        for (string item : playerInventory)
-            cout << "- " << item << endl;
-}
-
-// QUIT
-else if (command == "quit") {
-    valid = true;
-    playing = false;
-}
-
-
-// INVALID INPUT
-
-if (!valid) {
-    cout << "Invalid command. Try again.\n";
-}
-
-
-
-    
-        // TAKE ITEM
-             if (command == "take") {
-
-    if (roomItems[currentRoom] == "") {
-        cout << "There's nothing to take.\n";
-    }
-    else {
-        // If the player does not have the bag, only allow taking the bag itself
-        if (!hasBag && roomItems[currentRoom] != "bag") {
-            cout << " You should find something to hold items.\n";
-        }
-        else {
-            // Take item
-            cout << "You picked up the " << roomItems[currentRoom] << "!\n";
-            playerInventory.push_back(roomItems[currentRoom]);
-
-            // Set flags
-            if (roomItems[currentRoom] == "key") {
-                hasKey = true;
+            if (nextRoom == -1) {
+                cout << RED << "You can't go that way." << RESET << endl;
             }
-            if (roomItems[currentRoom] == "bag") {
-                hasBag = true;
-                cout << "You can now pick up other items.\n";
+            else if (nextRoom == OUTSIDE && !hasKey) {
+                cout << RED << "The door is locked. You need the key from Mom's room." 
+                     << RESET << endl;
             }
-
-            // Remove from room
-            roomItems[currentRoom] = "";
+            else {
+                cout << GREEN << "You move " << command << "." 
+                     << RESET << endl;
+                currentRoom = nextRoom;
+            }
         }
-    }
-}
 
+        // TAKE --------------------------------
+        else if (command == "take") {
+            valid = true;
 
+            if (roomItems[currentRoom] == "") {
+                cout << RED << "There's nothing to take." << RESET << endl;
+            }
+            else if (!hasBag && roomItems[currentRoom] != "bag") {
+                cout << RED << "You need something to hold items first." << RESET << endl;
+            }
+            else {
+                cout << GREEN << "You picked up the " << roomItems[currentRoom] << "!" 
+                     << RESET << endl;
+                playerInventory.push_back(roomItems[currentRoom]);
 
-        
-        // INVENTORY
+                // Flags
+                if (roomItems[currentRoom] == "key") {
+                    hasKey = true;
+                }
+                if (roomItems[currentRoom] == "bag") {
+                    hasBag = true;
+                    cout << CYAN << "You can now carry other items." << RESET << endl;
+                }
+
+                roomItems[currentRoom] = "";
+            }
+        }
+
+        // INVENTORY ----------------------------
         else if (command == "inventory") {
-            cout << "You are carrying:\n";
+            valid = true;
+            cout << CYAN << "You are carrying:" << RESET << endl;
 
             if (playerInventory.empty()) {
-                cout << "Nothing.\n";
+                cout << MAGENTA << "Nothing." << RESET << endl;
             }
             else {
                 for (string item : playerInventory) {
-                    cout << "- " << item << endl;
+                    cout << "- " << YELLOW << item << RESET << endl;
                 }
             }
         }
 
-
-    
-        // QUIT
+        // QUIT --------------------------------
         else if (command == "quit") {
+            valid = true;
             playing = false;
+            cout << RED << "You quit the game." << RESET << endl;
         }
- 
+
+        // INVALID ------------------------------
+        if (!valid) {
+            cout << RED << "Invalid command. Try again." << RESET << endl;
+        }
     }
 
     return 0;
 }
 
 
-
-// here is my initial conditions function
-
+// INITIAL CONNECTION SETUP
 void initialCONNECTIONS () {
-       
-        
-        // Initialize all connections to -1 (no connection)
-        for (int i = 0; i < NUM_ROOMS; i++) {
-            for (int j = 0; j < NUM_DIRECTIONS; j++) {
-                connections[i][j] = -1;
-            }
+    for (int i = 0; i < NUM_ROOMS; i++) {
+        for (int j = 0; j < NUM_DIRECTIONS; j++) {
+            connections[i][j] = -1;
         }
-        // now define the connections between all of the rooms 
-        connections[BEDROOM][NORTH] = HALLWAY;
-        connections[BEDROOM][SOUTH] = -1;
-        connections[BEDROOM][EAST] = -1;
-        connections[BEDROOM][WEST] = -1;
-        // connections for the hall way
-        connections[HALLWAY][NORTH] = KITCHEN;
-        connections[HALLWAY][SOUTH] = BEDROOM; 
-        connections[HALLWAY][EAST] = BATHROOM; 
-        connections[HALLWAY][WEST] = MOMROOM; 
+    }
 
-        // connections for KITCHEN
-        connections[KITCHEN][NORTH] = OUTSIDE; 
-        connections[KITCHEN][SOUTH] = HALLWAY;
-        connections[KITCHEN][EAST] = -1; 
-        connections[KITCHEN][WEST] = -1; 
+    connections[BEDROOM][NORTH]  = HALLWAY;
 
-        // connections for mom;s room
-        connections[MOMROOM][NORTH] = -1; 
-        connections[MOMROOM][SOUTH] = -1;
-        connections[MOMROOM][WEST] = -1;
-        connections[MOMROOM][EAST] = HALLWAY;
-        
-        // connection for bathroom 
-        connections[BATHROOM][NORTH] = -1;
-        connections[BATHROOM][SOUTH] = -1;
-        connections[BATHROOM][WEST] = HALLWAY;
-        connections[BATHROOM][EAST] = -1; 
+    connections[HALLWAY][SOUTH]  = BEDROOM;
+    connections[HALLWAY][NORTH]  = KITCHEN;
+    connections[HALLWAY][EAST]   = BATHROOM;
+    connections[HALLWAY][WEST]   = MOMROOM;
 
-        // connections outside
+    connections[KITCHEN][SOUTH]  = HALLWAY;
+    connections[KITCHEN][NORTH]  = OUTSIDE;
+
+    connections[MOMROOM][EAST]   = HALLWAY;
+
+    connections[BATHROOM][WEST]  = HALLWAY;
 }
-//exits function
+
+
+// SHOW AVAILABLE EXITS
 void showExits(int room) {
-    cout << "Exits: ";
+    cout << CYAN << "Exits: " << RESET;
 
     bool first = true;
+
     if (connections[room][NORTH] != -1) {
         cout << (first ? "" : ", ") << "north";
         first = false;
@@ -306,14 +241,10 @@ void showExits(int room) {
         cout << (first ? "" : ", ") << "south";
         first = false;
     }
-    if (connections[room][EAST]  != -1) {
+    if (connections[room][EAST] != -1) {
         cout << (first ? "" : ", ") << "east";
         first = false;
     }
-    if (connections[room][WEST]  != -1) {
+    if (connections[room][WEST] != -1) {
         cout << (first ? "" : ", ") << "west";
-        first = false;
-    }
-
-    cout << "\n";
-}
+        fi
