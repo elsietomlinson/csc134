@@ -3,11 +3,7 @@ m6hw
 11/18/2025
 prototype for my final project
 */
-/* elsie tomlinson
-m6hw
-11/18/2025
-prototype for my final project
-*/
+
 #include <iostream> 
 #include <string> 
 #include <vector>
