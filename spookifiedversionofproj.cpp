@@ -1,7 +1,7 @@
 /* elsie tomlinson
 final project
 11/18/2025
-spookified mysterious edition
+spookified mysterious edition (fixed input normalization)
 */
 
 #include <iostream>
@@ -31,7 +31,7 @@ void initialCONNECTIONS();
 void showExits(int room);
 void slowPrint(const string &text, int ms = 25);
 void randomSpook();
-string toLower(string s);
+string normalizeCommand(string s);
 
 // constants for directions
 enum Direction { NORTH = 0, SOUTH = 1, EAST = 2, WEST = 3, NUM_DIRECTIONS = 4 };
@@ -74,9 +74,18 @@ void randomSpook() {
     }
 }
 
-string toLower(string s) {
-    for (char &c : s) c = tolower(static_cast<unsigned char>(c));
-    return s;
+// Normalize command: trim leading/trailing whitespace and lowercase
+string normalizeCommand(string s) {
+    // trim left
+    size_t start = s.find_first_not_of(" \t\r\n");
+    if (start == string::npos) return ""; // all whitespace
+    size_t end = s.find_last_not_of(" \t\r\n");
+    string trimmed = s.substr(start, end - start + 1);
+
+    // lowercase
+    for (char &c : trimmed) c = static_cast<char>(tolower(static_cast<unsigned char>(c)));
+
+    return trimmed;
 }
 
 void showExits(int room) {
@@ -126,10 +135,12 @@ int main() {
             cout << "-> ";
 
             string line;
-            getline(cin, line);
-            if (line.find_first_not_of(" \t") == string::npos) continue;
+            if (!getline(cin, line)) { playing = false; running = false; break; } // handle EOF
 
-            string command = toLower(line);
+            // ignore blank/whitespace-only input
+            if (line.find_first_not_of(" \t\r\n") == string::npos) continue;
+
+            string command = normalizeCommand(line);
             bool valid = false;
 
             // MOVEMENT -------------------------------
@@ -168,7 +179,7 @@ int main() {
             }
 
             // TAKE ITEM -------------------------------
-            else if (command == "take" || command == "grab" || command == "pick up") {
+            else if (command.rfind("take",0) == 0 || command.rfind("grab",0) == 0 || command.rfind("pick up",0) == 0) {
                 valid = true;
                 if (roomItems[currentRoom] == "") {
                     cout << RED << "There's nothing obvious to take." << RESET << endl;
@@ -219,10 +230,12 @@ int main() {
         cout << "-> ";
 
         string restartInput;
-        getline(cin, restartInput);
+        if (!getline(cin, restartInput)) { running = false; break; } // handle EOF
 
-        if (restartInput != "\x1B") {  // ESC = ASCII 27
-            running = false;          // end entire program
+        // normalize user input for the restart prompt too
+        string restartNorm = normalizeCommand(restartInput);
+        if (restartNorm != "\x1b" && restartNorm != "esc" && restartNorm != "escape") {
+            running = false; // end entire program
         }
     }
 
