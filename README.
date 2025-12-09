@@ -1,0 +1,29 @@
+Asked how to organize game rooms using functions, arrays, and how to define and call them properly.
+
+Provided sections of code to debug issues with room transitions returning -1 or sending the player to incorrect locations.
+
+Asked how to add in-game items (like the key in Mom’s Room) and where to define and store them.
+
+Requested guidance on placing the main game loop and properly structuring inventory and movement logic.
+
+Asked how to prevent the player from leaving the house without the key and how to restrict access to certain rooms.
+
+Requested help fixing the initialCONNECTIONS() function so exits connected correctly.
+
+Asked how to clean up input validation and how to detect invalid commands more effectively.
+
+Requested help adding a mechanic requiring the player to have a bag before picking up items, plus where to add new boolean flags.
+
+Asked how to add, structure, and style a main menu.
+
+Asked how to change the color of text output using ANSI escape codes.
+
+Requested “spooky” and “mysterious” atmospheric text enhancements.
+
+Asked for debugging assistance when the north command intermittently registered as invalid.
+
+Requested complete rewrites of the full code with integrated fixes and improvements.
+
+Asked how to add a “YOU WIN” ending message and where to place the win condition.
+
+Requested an ESC-to-restart game loop and help implementing the restart logic.
